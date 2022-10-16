@@ -77,7 +77,7 @@ export class EnquiryFormComponent implements OnInit {
   //         state: [''],
   //         pincode: [],
   //     }),
-  //     existingCustomer: [''],
+  //     
   //     loanPurpose: [''],
   //     nearestBranch:[''],
   //     // cibilDetails: this.fb.group({

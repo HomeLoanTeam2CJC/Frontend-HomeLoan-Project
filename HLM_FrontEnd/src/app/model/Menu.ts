@@ -38,7 +38,7 @@ export class Menu {
       //Operational executive Module
       oe:[
         {
-          path: 'credit-score', title: "Legal Check", icon: "pe-7s-graph", class: "" 
+          path: 'oe-enquiry-list/credit-score', title: "Credit Score", icon: "pe-7s-graph", class: "" 
         },
         {
           path: 'oe-enquiry-list', title: 'Enquiry List', icon: "pe-7s-graph", class: ""

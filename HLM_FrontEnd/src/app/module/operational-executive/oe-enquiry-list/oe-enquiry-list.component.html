@@ -6,6 +6,7 @@
         <th scope="col">First Name</th>
         <th scope="col">Last Name</th>
         <th scope="col">PAN Number</th>
+        <th scope="col">Pancard photo</th>
         <th scope="col">Update Cibil Details</th>
         
       </tr>
@@ -16,8 +17,11 @@
         <td>{{e.firstName}}</td>
         <td>{{e.lastName}}</td>
         <td>{{e.panno}}</td>
-        <td><button class="btn btn-primary" (click)="updateCibil()">Update Cibil</button></td>
+        <td> <img [src]="'data:image/jpeg;base64,'+e.uploadedPancard" height="150"></td>
+        <td><button class="btn btn-primary" [routerLink]="['credit-score']" [state]="e">Update Cibil</button></td>
       </tr>
       
     </tbody>
   </table>
+
+  <router-outlet></router-outlet>
