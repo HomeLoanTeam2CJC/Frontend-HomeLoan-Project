@@ -1,0 +1,23 @@
+
+<table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Enquiry ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">PAN Number</th>
+        <th scope="col">Update Cibil Details</th>
+        
+      </tr>
+    </thead>
+    <tbody *ngFor="let e of enquiryList">
+      <tr>
+        <th scope="row">{{e.enquiryId}}</th>
+        <td>{{e.firstName}}</td>
+        <td>{{e.lastName}}</td>
+        <td>{{e.panno}}</td>
+        <td><button class="btn btn-primary" (click)="updateCibil()">Update Cibil</button></td>
+      </tr>
+      
+    </tbody>
+  </table>

@@ -1,0 +1,38 @@
+{
+  "EnquiryForm": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "enquiryId": null,
+      "firstName": "test1",
+      "lastName": "",
+      "dateOfBirth": "",
+      "gender": "",
+      "email": "kateshubham@gmail.com",
+      "mobileNo": 8793771487,
+      "panno": "",
+      "occupation": "",
+      "address": {
+        "addressId": null,
+        "houseNumber": null,
+        "streetName": "GREEN PARK-2, SHRIRAMPUR, PUSAD",
+        "areaName": "",
+        "cityName": "Pusad",
+        "district": "",
+        "state": "Maharashtra",
+        "pincode": "445215"
+      },
+      "existingCustomer": "",
+      "loanPurpose": "",
+      "nearestBranch": "dghf",
+      "id": 4
+    }
+  ]
+}
