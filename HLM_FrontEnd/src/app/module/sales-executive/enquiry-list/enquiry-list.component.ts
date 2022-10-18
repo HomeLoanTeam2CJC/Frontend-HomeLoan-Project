@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EnquiryForm } from 'app/model/enquiry-form';
+import { EnquiryService } from 'app/services/enquiry.service';
 
 @Component({
   selector: 'app-enquiry-list',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnquiryListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: EnquiryService) { }
+
+  enquiryList : EnquiryForm[]
 
   ngOnInit(): void {
+    this.service.getEnquiryList().subscribe((enquiryData: EnquiryForm[])=>{
+      this.enquiryList = enquiryData
+    })
+
   }
 
 }

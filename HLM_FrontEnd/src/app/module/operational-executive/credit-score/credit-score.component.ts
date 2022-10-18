@@ -104,12 +104,13 @@ export class CreditScoreComponent implements OnInit {
 
     const enquiryFormJson = JSON.stringify(this.enquiryForm.value)
 
-
     const enquiryFormData = new FormData
     enquiryFormData.append('userEnquiryForm', enquiryFormJson)
     enquiryFormData.append('uploadedPancard', this.uploadedPancard)
 
+
     console.log(this.enquiryForm.controls['enquiryId'].value)
+
     this.service.updateCibilDetails(enquiryFormData, this.enquiryForm.controls['enquiryId'].value).subscribe()
   }
 }

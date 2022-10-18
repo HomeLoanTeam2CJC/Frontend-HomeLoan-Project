@@ -1,1 +1,29 @@
-<p>enquiry-list works!</p>
+
+<table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Enquiry ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">PAN Number</th>
+        <!-- <th scope="col">Pancard photo</th> -->
+        <th scope="col">Cibil Status</th>
+        
+      </tr>
+    </thead>
+    <tbody *ngFor="let e of enquiryList">
+      <tr>
+        <th scope="row">{{e.enquiryId}}</th>
+        <td>{{e.firstName}}</td>
+        <td>{{e.lastName}}</td>
+        <td>{{e.panno}}</td>
+        <!-- <td> <img [src]="'data:image/jpeg;base64,'+e.uploadedPancard" height="150"></td> -->
+        <td>{{e.cibilDetails.status}}</td>
+        <td>{{e.cibilDetails.cibilScore}}</td>
+        <td>{{e.cibilDetails.remarksByOe}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+  <router-outlet></router-outlet>

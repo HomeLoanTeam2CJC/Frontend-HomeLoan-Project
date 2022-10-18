@@ -29,7 +29,7 @@ export class Customer {
     allPersonalDocuments: AllPersonalDocuments;
     familyInfo: FamilyInfo;
     profession: Profession;
-    cibilData: CibilData;
+    cibilDetails: CibilData;
     accountDetails: AccountDetails;
     propertyInfo: PropertyInfo;
     gurantorDetails: GurantorDetails;
@@ -46,9 +46,5 @@ export class Customer {
     loanAgreementCustomerSignStatus: string;
     loanDisbursementStatus: string;
     loanDisbursement: LoanDisbursement;
-
-
-    
-    
 
 }
