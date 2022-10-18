@@ -25,4 +25,9 @@ export class EnquiryService {
   return this.http.get(this.backendUrl+"getallenquirydata")
  }
 
+ updateCibilDetails(enquiryWithCibilDetails : any, enquiryId: number){
+
+  return this.http.put(this.backendUrl+"updateEnquriyForm/"+enquiryId, enquiryWithCibilDetails)
+ }
+
 }

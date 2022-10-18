@@ -1,1 +1,177 @@
-<p>credit-score works!</p>
+<h1>Update Cibil Details</h1>
+
+<div class="overall">
+    <h1 class="h"></h1>
+    <div class="container">
+        <h2 class="h" >Update Cibil Details</h2>
+
+    <form [formGroup]="enquiryForm" (ngSubmit)="submitCibilDetails()">
+        <div class="form-row">
+          <div class="col-md-6">
+            
+            <div class="form-group">
+                <label for="inputName">Enquiry ID</label>
+                <input type="number" disabled class="form-control" id="inputName" aria-describedby="nameHelp" formControlName="enquiryId">
+                
+            </div>
+
+              <div class="form-group">
+                  <label for="inputName">First Name</label>
+                  <input type="text" disabled class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Enter first name" formControlName="firstName">
+                  
+              </div>
+              <!-- <div class="form-group">
+                <label for="exampleInputEmail1">Date of Birth</label>
+                <input type="text" disabled class="form-control" id="exampleInputDob" aria-describedby="dobHelp" placeholder="Enter Date of birth" formControlName="dateOfBirth">
+                <small id="dobHelp" class="form-text text-muted">Enter as per this format: dd/mm/yyyy</small>
+              </div> -->
+              <!-- <div class="form-group">
+                  <label for="inputMobile">Mobile</label>
+                  <input type="number" disabled class="form-control" id="inputMobile" aria-describedby="mobileHelp" placeholder="Enter Mobile" formControlName="mobileno">
+                  <small id="mobileHelp" class="form-text text-muted">Enter your primary mobile number</small>
+              </div> -->
+              <!-- <div class="form-group">
+                <label for="inputDesignation">Occupation</label>
+                <input type="text" disabled class="form-control" id="inputDesignation" placeholder="Occupation" formControlName="occupation">
+            </div> -->
+
+            <!-- <div formGroupName="address">
+                <div class="form-group">
+                    <label>Address</label>
+                      <label for="inputUsername">House number</label>
+                      <input type="number" class="form-control" id="inputUsername" placeholder="House Number" formControlName="houseNumber">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputDesignation">Area name</label>
+                    <input type="text" class="form-control" id="inputDesignation" placeholder="Area name" formControlName="areaName">
+                </div>
+                <div class="form-group">
+                    <label for="inputDesignation">Street Name</label>
+                    <input type="text" class="form-control" id="inputDesignation" placeholder="Street Name" formControlName="streetName">
+                </div>
+                <div class="form-group">
+                    <label for="inputDesignation">City Name</label>
+                    <input type="text" class="form-control" id="inputDesignation" placeholder="City name" formControlName="cityName">
+                </div>
+                <div class="form-group">
+                    <label for="inputDesignation">District</label>
+                    <input type="text" class="form-control" id="inputDesignation" placeholder="District" formControlName="district">
+                </div>
+                <div class="form-group">
+                    <label for="inputDesignation">State</label>
+                    <input type="text" class="form-control" id="inputDesignation" placeholder="State" formControlName="state">
+                </div>
+                <div class="form-group">
+                    <label for="inputDesignation">Pincode</label>
+                    <input type="text" class="form-control" id="inputDesignation" placeholder="pincode" formControlName="pincode">
+                </div>
+
+
+            </div> -->
+
+
+
+            <!-- Try radio button for yes/no -->
+            
+
+            <!-- <div class="form-group">
+                <label for="exampleInputPassword1">Loan Purpose</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Loan Purpose" formControlName="loanPurpose">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">Nearest Branch</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nearest Branch" formControlName="nearestBranch">
+              </div> -->
+
+              
+              
+
+
+
+              
+<!--   
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">I agree to the 
+                  <a routerLink="terms">terms & conditions</a>
+                </label>
+              </div> -->
+
+
+
+
+              <div formGroupName="cibilDetails">
+                <div class="form-group">
+                    <label>Cibil Details</label>
+                      <label for="inputUsername">Cibil Score</label>
+                      <input type="number" class="form-control" id="inputUsername" placeholder="Cibil score" formControlName="cibilScore">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputDesignation">Cibil Score Date & Time</label>
+                    <input type="text" class="form-control" id="inputDesignation" placeholder="Cibil Score Date Time" formControlName="cibilScoreDateTime">
+                </div>
+                <div class="form-group">
+                    <label for="inputDesignation">Status</label>
+                    <input type="text" class="form-control" id="inputDesignation" placeholder="Status" formControlName="status">
+                </div>
+                <div class="form-group">
+                    <label for="inputDesignation">Remarks by Operational Executive</label>
+                    <input type="text" class="form-control" id="inputDesignation" placeholder="Remarks" formControlName="remarksByOe">
+                </div>
+
+              </div>
+  
+              <button type="submit" class="btn btn-primary">Update Cibil data</button> &nbsp;
+              <!-- <button (click)="reset()">Clear</button> -->
+              <!-- <button routerLink="/login">Back to Login</button> -->
+            
+          </div>
+      
+          <div class="col-md-6">
+            <div class="form-group">
+                <label for="inputName">Last Name</label>
+                <input type="text" disabled class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Enter last name" formControlName="lastName">
+                <small id="nameHelp" class="form-text text-muted">Enter last name same as your govt ID name
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <input type="text" disabled class="form-control" id="gender" aria-describedby="nameHelp" placeholder="Specify Gender" formControlName="gender">
+                <small id="nameHelp" class="form-text text-muted">Mention gender
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="inputMobile">Email</label>
+                <input type="email" disabled class="form-control" id="inputMobile" aria-describedby="mobileHelp" placeholder="Enter email" formControlName="email">
+                <small id="mobileHelp" class="form-text text-muted">Enter your primary email</small>
+            </div>
+            <div class="form-group">
+                <label for="inputDesignation">Pancard Number</label>
+                <input type="text" disabled class="form-control" id="inputDesignation" placeholder="Pancard Number" formControlName="panno">
+            </div>
+
+            <div class="form-group">
+                <label for="inputDesignation">Pancard File</label>
+                <img [src]="'data:image/jpeg;base64,'+ uploadedPancard" height="150">
+            </div>
+           
+            <!-- <div>
+                <label>Upload Pancard</label> &nbsp;
+                <input type="file" (change)="onSelectingPancard($event)"> &nbsp;
+                <img [src]="pancardImg" height="50">
+            </div> -->
+            
+            
+
+
+            
+            
+
+            
+          </div>
+        </div>
+    </form>
+    </div>
+</div>
+<router-outlet></router-outlet>

@@ -20,10 +20,6 @@ export class OeEnquiryListComponent implements OnInit {
 
   }
 
-  updateCibil(){
-
-    alert("updateCibil() called")
-    
-  }
+ 
 
 }
