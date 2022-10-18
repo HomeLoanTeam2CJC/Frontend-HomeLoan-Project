@@ -1,7 +1,7 @@
 <div class="overall">
     <h1 class="h">New Enquiry Form</h1>
     <div class="container">
-        <h2 class="h" >New Enquiry Form</h2>
+       
 
     <form [formGroup]="enquiryForm" (ngSubmit)="submitEnquiryForm()">
         <div class="form-row">
@@ -92,8 +92,8 @@
               </div>
   
               <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
-              <button (click)="reset()">Clear</button>
-              <button routerLink="/login">Back to Login</button>
+              <button class="btn btn-primary" (click)="reset()">Clear</button>&nbsp;&nbsp;
+              <button routerLink="/login" class="btn btn-primary">Back to Login</button>
             
           </div>
       

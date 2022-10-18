@@ -68,6 +68,9 @@ export class Menu {
       },
       {
         path: 'ledger-defaulter-list', title: "Ledger Defaulter List", icon: "pe-7s-graph", class: ""
+      },
+      {
+        path: 'ledger-form', title: "Ledger Form", icon: "pe-7s-graph", class: ""
       }
       ],
 

@@ -5,6 +5,7 @@ import { DisbursementFormComponent } from './disbursement-form/disbursement-form
 import { LedgerTotalListComponent } from './ledger-total-list/ledger-total-list.component';
 import { LedgerDefaulterListComponent } from './ledger-defaulter-list/ledger-defaulter-list.component';
 import { RouterModule, Routes } from '@angular/router';
+import { LedgerFormComponent } from './ledger-form/ledger-form.component';
 
 const amroutes: Routes = [
   {
@@ -18,17 +19,21 @@ const amroutes: Routes = [
   },
   {
     path: 'ledger-defaulter-list', component: LedgerDefaulterListComponent
+  },
+  {
+    path: 'ledger-form', component: LedgerFormComponent
   }
 
 ]
 
 @NgModule({
-  declarations: [AmApplicationListComponent, DisbursementFormComponent, LedgerTotalListComponent, LedgerDefaulterListComponent],
+  declarations: [AmApplicationListComponent, DisbursementFormComponent, LedgerTotalListComponent, LedgerDefaulterListComponent, LedgerFormComponent],
   imports: [
     CommonModule, RouterModule.forChild(amroutes)
   ],
   exports: [
-    AmApplicationListComponent, DisbursementFormComponent, LedgerTotalListComponent, LedgerDefaulterListComponent
+    AmApplicationListComponent, DisbursementFormComponent, LedgerTotalListComponent, LedgerDefaulterListComponent,
+    LedgerFormComponent
   ]
 })
 export class AccountsManagerModule { }

@@ -1,0 +1,108 @@
+<div class="overall">
+    <h1 class="h">New Ledger Form</h1>
+    <div class="container">
+      
+
+    <form [formGroup]="ledgerForm" (ngSubmit)="submitLedgerForm()">
+        <div class="form-row">
+          <div class="col-md-6">
+            
+              <div class="form-group">
+                  <label for="ledgerCreatedDate">Ledger Created Date</label>
+                  <input type="text" class="form-control" id="ledgerCreatedDate" aria-describedby="nameHelp" placeholder="Enter Ledger Created Date" formControlName="ledgerCreatedDate">
+                  <small id="ledgerCreatedDate" class="form-text text-muted">Enter Ledger Creadted Date
+                  </small>
+              </div>
+              <div class="form-group">
+                <label for="payableAmountWithInterest">Payable Amount With Interest</label>
+                <input type="number" class="form-control" id="payableAmountWithInterest" aria-describedby="dobHelp" placeholder="Enter payable Amount With Interest" formControlName="payableAmountWithInterest">
+                <small id="payableAmountWithInterest" class="form-text text-muted">Enter payable Amount With Interest</small>
+              </div>
+              <div class="form-group">
+                <label for="monthlyEMI">Monthly EMI</label>
+                <input type="number" class="form-control" id="monthlyEMI" aria-describedby="dobHelp" placeholder="Enter monthly EMI" formControlName="monthlyEMI">
+                <small id="monthlyEMI" class="form-text text-muted">monthly EMI</small>
+              </div>
+              <div class="form-group">
+                <label for="remainingAmount">Remaining Amount</label>
+                <input type="number" class="form-control" id="remainingAmount" aria-describedby="dobHelp" placeholder="Enter Remaining Amount" formControlName="remainingAmount">
+                <small id="remainingAmount" class="form-text text-muted">Remaining Amount</small>
+              </div>
+              <div class="form-group">
+                <label for="nextEmiDateEnd">Next Emi Date End</label>
+                <input type="text" class="form-control" id="nextEmiDateEnd" aria-describedby="dobHelp" placeholder="Enter next Emi Date End" formControlName="nextEmiDateEnd">
+                <small id="nextEmiDateEnd" class="form-text text-muted">Next Emi Date End</small>
+              </div>
+              <div class="form-group">
+                <label for="previousEmiStatus">Previous Emi Status</label>
+                <input type="text" class="form-control" id="previousEmiStatus" aria-describedby="dobHelp" placeholder="Enter previous Emi Status" formControlName="previousEmiStatus">
+                <small id="previousEmiStatus" class="form-text text-muted">previous Emi Status</small>
+              </div>
+              <div class="form-group">
+                <label for="loanEndDate">Loan End Date</label>
+                <input type="text" class="form-control" id="loanEndDate" aria-describedby="dobHelp" placeholder="Enter loan End Date" formControlName="loanEndDate">
+                <small id="loanEndDate" class="form-text text-muted">loan End Date</small>
+              </div>
+              <div class="form-group">
+                <label for="defaulterStatus">Defaulter Status</label>
+                <input type="text" class="form-control" id="defaulterStatus" aria-describedby="dobHelp" placeholder="Enter defaulter Status" formControlName="defaulterStatus">
+                <small id="defaulterStatus" class="form-text text-muted">defaulter Status</small>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
+              <button class="btn btn-primary" (click)="reset()">Clear</button>
+            </div>
+
+         
+      
+          <div class="col-md-6">
+            <div class="form-group">
+                <label for="totalLoanAmount">Loan Amount</label>
+                <input type="number" class="form-control" id="totalLoanAmount" aria-describedby="nameHelp" placeholder="Enter Loan Amount" formControlName="totalLoanAmount">
+                <small id="totalLoanAmount" class="form-text text-muted">Enter Loan Amount
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="tenure">Tenure</label>
+                <input type="number" class="form-control" id="tenure" aria-describedby="nameHelp" placeholder="Enter tenure" formControlName="tenure">
+                <small id="tenure" class="form-text text-muted">Enter tenure
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="amountPaidTillDate">Amount Paid Till Date</label>
+                <input type="text" class="form-control" id="amountPaidTillDate" aria-describedby="nameHelp" placeholder="Enter Amount Paid Till Date" formControlName="amountPaidTillDate">
+                <small id="amountPaidTillDate" class="form-text text-muted">Amount Paid Till Date
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="nextEmiDateStart">Bank next Emi Date Start</label>
+                <input type="text" class="form-control" id="nextEmiDateStart" aria-describedby="nameHelp" placeholder="Enter next Emi Date Start" formControlName="nextEmiDateStart">
+                <small id="nextEmiDateStart" class="form-text text-muted">Bank next Emi Date Start
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="defaulterCount">defaulter Count</label>
+                <input type="number" class="form-control" id="defaulterCount" aria-describedby="nameHelp" placeholder="Enter Defaulter Count" formControlName="defaulterCount">
+                <small id="defaulterCount" class="form-text text-muted">defaulter Count
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="currentMonthEmiStatus">current Month Emi Status</label>
+                <input type="text" class="form-control" id="currentMonthEmiStatus" aria-describedby="nameHelp" placeholder="Enter current Month Emi Status" formControlName="currentMonthEmiStatus">
+                <small id="currentMonthEmiStatus" class="form-text text-muted">current Month Emi Status
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="loanStatus">Loan Status</label>
+                <input type="text" class="form-control" id="loanStatus" aria-describedby="nameHelp" placeholder="Enter loan Status" formControlName="loanStatus">
+                <small id="loanStatus" class="form-text text-muted">loan Status
+                </small>
+            </div>
+        
+          </div>
+        </div>
+    </form>
+    </div>
+</div>
+<router-outlet></router-outlet>
+
