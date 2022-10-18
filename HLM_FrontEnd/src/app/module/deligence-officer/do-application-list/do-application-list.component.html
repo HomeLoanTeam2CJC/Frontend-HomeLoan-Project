@@ -1,1 +1,28 @@
-<p>do-application-list works!</p>
+
+<table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Customer ID</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Customer DOB</th>
+        <th scope="col">Customer Age</th>
+        <th scope="col">Customer Gender</th>
+        <th scope="col">Customer Email</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let e of customerList">
+      <tr>
+        <th scope="row">{{e.customerId}}</th>
+        <td>{{e.customerName}}</td>
+        <td>{{e.customerDateOfBirth}}</td>
+        <td>{{e.customerAge}}</td>
+        <td>{{e.customerGender}}</td>
+        <td>{{e.customerEmail}}</td>
+        <td><button class="btn btn-primary" [routerLink]="['do-application-update']" [state]="e">Update</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+  <router-outlet></router-outlet>

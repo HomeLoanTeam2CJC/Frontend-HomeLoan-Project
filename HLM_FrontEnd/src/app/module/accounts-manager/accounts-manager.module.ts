@@ -6,6 +6,7 @@ import { LedgerTotalListComponent } from './ledger-total-list/ledger-total-list.
 import { LedgerDefaulterListComponent } from './ledger-defaulter-list/ledger-defaulter-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { LedgerFormComponent } from './ledger-form/ledger-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const amroutes: Routes = [
   {
@@ -29,7 +30,7 @@ const amroutes: Routes = [
 @NgModule({
   declarations: [AmApplicationListComponent, DisbursementFormComponent, LedgerTotalListComponent, LedgerDefaulterListComponent, LedgerFormComponent],
   imports: [
-    CommonModule, RouterModule.forChild(amroutes)
+    CommonModule, RouterModule.forChild(amroutes),ReactiveFormsModule, FormsModule
   ],
   exports: [
     AmApplicationListComponent, DisbursementFormComponent, LedgerTotalListComponent, LedgerDefaulterListComponent,

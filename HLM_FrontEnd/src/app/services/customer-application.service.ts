@@ -14,7 +14,7 @@ export class CustomerApplicationService {
 
   step1Url: string = 'http://localhost:9090/customerApi/'
   step2Url: string = 'http://localhost:9090/step2Api/'
-
+  backendUrl:string=''
   saveCutomerApplication(customerApplication : any){
 
     return this.http.post(this.backendCustomerUrl+"newCustomerApplication", customerApplication)
@@ -28,4 +28,8 @@ export class CustomerApplicationService {
   saveStep2(step2: any, savedCustomerID: any){
     return this.http.post(this.step2Url+"postStep2/"+savedCustomerID, step2)
   }
+
+  getCustomerList(){
+    return this.http.get(this.backendUrl+"")
+   }
 }
