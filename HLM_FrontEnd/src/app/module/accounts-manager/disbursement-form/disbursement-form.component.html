@@ -1,1 +1,86 @@
-<p>disbursement-form works!</p>
+<div class="overall">
+    <h1 class="h">New Disbursement Form</h1>
+    <div class="container">
+        
+
+    <form [formGroup]="disbursementForm" (ngSubmit)="submitDisbursementForm()">
+        <div class="form-row">
+          <div class="col-md-6">
+            
+              <div class="form-group">
+                  <label for="loanNumber">Loan Number</label>
+                  <input type="number" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Enter Loan Number" formControlName="loanNumber">
+                  <small id="nameHelp" class="form-text text-muted">Enter Loan Number
+                  </small>
+              </div>
+              <div class="form-group">
+                <label for="amountPayType">Amount Pay Type</label>
+                <input type="text" class="form-control" id="exampleInputDob" aria-describedby="dobHelp" placeholder="Enter Amount Pay Type" formControlName="amountPayType">
+                <small id="dobHelp" class="form-text text-muted">Enter Amount Pay Type</small>
+              </div>
+              <div class="form-group">
+                <label for="bankName">Bank Name</label>
+                <input type="text" class="form-control" id="exampleInputDob" aria-describedby="dobHelp" placeholder="Enter Bank Name" formControlName="bankName">
+                <small id="dobHelp" class="form-text text-muted">Bank Name</small>
+              </div>
+              <div class="form-group">
+                <label for="ifscCode">Bank IFSC Code</label>
+                <input type="text" class="form-control" id="exampleInputDob" aria-describedby="dobHelp" placeholder="Enter ifsc Code" formControlName="ifscCode">
+                <small id="dobHelp" class="form-text text-muted">IFSC Code</small>
+              </div>
+              <div class="form-group">
+                <label for="transferAmount">Transfer Amount</label>
+                <input type="number" class="form-control" id="exampleInputDob" aria-describedby="dobHelp" placeholder="Enter Transfer Amount" formControlName="transferAmount">
+                <small id="dobHelp" class="form-text text-muted">Transfer Amount</small>
+              </div>
+              <div class="form-group">
+                <label for="amountPaidDate">Date Of Payment</label>
+                <input type="text" class="form-control" id="exampleInputDob" aria-describedby="dobHelp" placeholder="Enter Date Of Payment" formControlName="amountPaidDate">
+                <small id="dobHelp" class="form-text text-muted">Date Of Payment</small>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
+              <button class="btn btn-primary" (click)="reset()">Clear</button>
+            </div>
+
+         
+      
+          <div class="col-md-6">
+            <div class="form-group">
+                <label for="agreementDate">Loan Agreement Date</label>
+                <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Enter Loan Aagreement Date" formControlName="agreementDate">
+                <small id="nameHelp" class="form-text text-muted">Enter Loan Agreement Date
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="totalLoanAmount">Loan Amount</label>
+                <input type="number" class="form-control" id="gender" aria-describedby="nameHelp" placeholder="Enter Total Amount" formControlName="totalLoanAmount">
+                <small id="nameHelp" class="form-text text-muted">total loan amount
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="accountNumber">Bank  Account Number</label>
+                <input type="number" class="form-control" id="gender" aria-describedby="nameHelp" placeholder="Enter Account Number" formControlName="accountNumber">
+                <small id="nameHelp" class="form-text text-muted">Bank  Account Number
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="accountType">Bank  Account Type</label>
+                <input type="text" class="form-control" id="gender" aria-describedby="nameHelp" placeholder="Enter Account Type" formControlName="accountType">
+                <small id="nameHelp" class="form-text text-muted">Bank  Account Type
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="paymentStatus">Payment Status</label>
+                <input type="text" class="form-control" id="gender" aria-describedby="nameHelp" placeholder="Enter Payment Status" formControlName="paymentStatus">
+                <small id="nameHelp" class="form-text text-muted">Payment Status
+                </small>
+            </div>
+        
+          </div>
+        </div>
+    </form>
+    </div>
+</div>
+<router-outlet></router-outlet>
+
