@@ -43,7 +43,7 @@ export class Customer {
     loanAgreementStatus: string;
     loanAgreement: LoanAgreement;
     loanAgreementBmSignStatus: string;
-    loanAgreementCustomerSignStatus: string;
+    // loanAgreementCustomerSignStatus: string;
     loanDisbursementStatus: string;
     loanDisbursement: LoanDisbursement;
 

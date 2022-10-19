@@ -14,28 +14,30 @@
     <div class="shadow p-3 mb-5 bg-body bg-white rounded">
         <div class="progress">
             <div *ngIf="step==1" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 11.5%">Step 1</div>
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 10%">Step 1</div>
             <div *ngIf="step==2" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 22%">22%</div>
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 20%">Step 2</div>
             <div *ngIf="step==3" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 33%">33%</div>
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 30%">Step 3</div>
             <div *ngIf="step==4" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 44%">44%</div>
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 40%">Step 4</div>
             <div *ngIf="step==5" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 55%">55%</div>
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 50%">Step 5</div>
             <div *ngIf="step==6" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 66%">66%</div>
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 60%">Step 6</div>
             <div *ngIf="step==7" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 80%">80%</div>
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 70%">Step 7</div>
             <div *ngIf="step==8" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 93%">93%</div>
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 80%">Step 8</div>
             <div *ngIf="step==9" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 100%">100%</div>
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 90%">Step 9</div>
+            <div *ngIf="step==9" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 100%">Step 10</div>
 
         </div>
         <br>
 
-        <form [formGroup]="customerApplicationForm" (ngSubmit)="saveCustomer()">
+        <form [formGroup]="customerApplicationForm" (ngSubmit)="savePhase1()">
             <!-- <small><img [src]="imageSrc1" height="50"></small> -->
 
             <!-- Basic Information Form -->
@@ -105,6 +107,10 @@
                     </div>
 
                 </div>
+
+
+
+
                 <div class="form-row" formGroupName="customerAddress">
                     <div class="form-group col-md-6">
                         <label style="text-align: center;">Address Details</label>
@@ -192,6 +198,12 @@
             
             <div *ngIf="step==2">
                 <div>
+                    <div>
+                        Please note down your customer ID for future use: {{generatedCustomerId}} <br>
+                        
+                        
+                    </div>
+                    
                     <h6 class="text-center">Educational, Family, Professional Information</h6><br>
                     <div class="form-row">
                         
@@ -287,147 +299,321 @@
 
 
 
-            <!-- Occupation Information Form -->
-            <div *ngIf="step==3" formGroupName="occupation">
-                <h6 class="text-center">Occupation Details</h6><br>
+            
+
+
+
+            <!-- Documents uploading -->
+            <div *ngIf="step==3" >
+                <h6 class="text-center">Upload Personal Documents</h6><br>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputoccupationtype">Occupation Type</label>
-                        <input type="text" class="form-control" name="occupationtype" id="inputoccupationtype"
-                            placeholder="Occupation Type" formControlName="occupationtype">
+                        <label>Address Proof</label> &nbsp;
+                        <input type="file" (change)="onSelectingAddressProof($event)"> &nbsp;
+                        <img [src]="uploadedAddressProof" height="50">
                     </div>
+                    <div class="form-group col-md-6">
+                        <label>Pancard</label> &nbsp;
+                        <input type="file" (change)="onSelectingPanCard($event)"> &nbsp;
+                        <img [src]="uploadedPanCard" height="50">
+                    </div>
+                </div>
 
-
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Income Tax Doc</label> &nbsp;
+                        <input type="file" (change)="onSelectingincomeTax($event)"> &nbsp;
+                        <img [src]="uploadedincomeTax" height="50">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Aadhar Card</label> &nbsp;
+                        <input type="file" (change)="onSelectingaadharCard($event)"> &nbsp;
+                        <img [src]="uploadedaadharCard" height="50">
+                    </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <div>
-                            <label for="inputsalary">Salary</label>
-                            <input type="number" class="form-control" name="salary" id="inputsalary"
-                                placeholder="Salary" formControlName="salary">
-                        </div>
+                        <label>Photo</label> &nbsp;
+                        <input type="file" (change)="onSelectingphoto($event)"> &nbsp;
+                        <img [src]="uploadedphoto" height="50">
                     </div>
                     <div class="form-group col-md-6">
-                        <div>
-                            <label for="inputremainingWorkingPeriod">Remaining Working Period</label>
-                            <input type="number" class="form-control" name="remainingWorkingPeriod"
-                                id="inputremainingWorkingPeriod" placeholder="Remaining Working Period"
-                                formControlName="remainingWorkingPeriod">
-                        </div>
+                        <label>Thumb Print</label> &nbsp;
+                        <input type="file" (change)="onSelectingthumbPrint($event)"> &nbsp;
+                        <img [src]="uploadedthumbPrint" height="50">
                     </div>
-
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <div>
-                            <label for="inputdesignation">Designation</label>
-                            <input type="text" class="form-control" name="designation" id="inputdesignation"
-                                placeholder="Designation" formControlName="designation">
-                        </div>
+                        <label>Signature</label> &nbsp;
+                        <input type="file" (change)="onSelectingsignature($event)"> &nbsp;
+                        <img [src]="uploadedsignature" height="50">
                     </div>
                     <div class="form-group col-md-6">
-
-                        <div class="input-group-prepend">
-                            <span>Upload Salary Slip</span>
-                        </div>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile01" name="salrySlip"
-                                formControlName="salrySlip" value="occupation.salrySlip"
-                                (change)="onSelectSalarySlip($event)">
-                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                        </div>
-
+                        <label>Bank Cheque</label> &nbsp;
+                        <input type="file" (change)="onSelectingbankCheque($event)"> &nbsp;
+                        <img [src]="uploadedbankCheque" height="50">
                     </div>
-
                 </div>
-
-
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Salary Slips</label> &nbsp;
+                        <input type="file" (change)="onSelectingsalarySlips($event)"> &nbsp;
+                        <img [src]="uploadedsalarySlips" height="50">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>propertyDocuments</label> &nbsp;
+                        <input type="file" (change)="onSelectingpropertyDocuments($event)"> &nbsp;
+                        <img [src]="uploadedpropertyDocuments" height="50">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>priceProofs</label> &nbsp;
+                        <input type="file" (change)="onSelectingpriceProofs($event)"> &nbsp;
+                        <img [src]="uploadedpriceProofs" height="50">
+                    </div>
+                </div>
             </div>
 
-            <!-- Documents Upload Form -->
+
+
+
+
             <div *ngIf="step==4">
-                <h6 class="text-center">Upload Documents</h6><br>
-                <div class="form-row" formGroupName="documents">
+                <h6 class="text-center">Step 4 data</h6><br>
+                <div class="form-row" formGroupName="cibilDetails">
+                    Cibil Details
                     <div class="form-group col-md-6">
-                        <label for="inputqualification">Qualification</label>
-                        <input type="text" class="form-control" name="qualification" id="inputqualification"
-                            placeholder="Qualification" formControlName="qualification">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <div class="input-group-prepend">
-                            <span>Adhaar Card</span>
-                        </div>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputaddharcard" name="addharcard"
-                                formControlName="documents.addharcard" value="documents.addharcard"
-                                (change)="onSelectAdhaarCard($event)">
-                            <label class="custom-file-label" for="inputaddharcard">Choose file</label>
-                        </div>
+                        <label for="cibilScore">Cibil Score</label>
+                        <input type="number" class="form-control" name="cibilScore" id="cibilScore"
+                            placeholder="cibilScore" formControlName="cibilScore">
                     </div>
                     <div class="form-group col-md-6">
-                        <div class="input-group-prepend">
-                            <span>Pancard</span>
-                        </div>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputpancard" name="pancard"
-                                formControlName="documents.pancard" value="documents.pancard"
-                                (change)="onSelectPanCard($event)">
-                            <label class="custom-file-label" for="inputpancard">Choose file</label>
-                        </div>
+                        <label for="cibilScoreDateTime">cibilScoreDateTime</label>
+                        <input type="text" class="form-control" name="cibilScoreDateTime" id="cibilScoreDateTime"
+                            placeholder="cibilScoreDateTime" formControlName="cibilScoreDateTime">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="status">Cibil status</label>
+                        <input type="text" class="form-control" name="status" id="status"
+                            placeholder="status" formControlName="status">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="remarksByOe">Remarks By Opertional Executive</label>
+                        <input type="text" class="form-control" name="remarksByOe" id="remarksByOe"
+                            placeholder="remarksByOe" formControlName="remarksByOe">
                     </div>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <div class="input-group-prepend">
-                            <span>Last Three Year ITR</span>
+
+                <div class="form-row" formGroupName="accountDetails">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="accountType">Account Type</label>
+                            <input type="text" class="form-control" name="accountType" id="accountType"
+                                placeholder="accountType" formControlName="accountType">
                         </div>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputlastthreeyearITR"
-                                name="lastthreeyearITR" formControlName="documents.lastthreeyearITR"
-                                value="documents.lastthreeyearITR" (change)="onSelectITR($event)">
-                            <label class="custom-file-label" for="inputlastthreeyearITR">Choose file</label>
+                        <div class="form-group col-md-6">
+                            <label for="accountBalance">Account Balance</label>
+                            <input type="number" class="form-control" name="accountBalance" id="accountBalance"
+                                placeholder="accountBalance" formControlName="accountBalance">
                         </div>
                     </div>
-                    <div class="form-group col-md-6">
-                        <div class="input-group-prepend">
-                            <span>Photo</span>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="accountHolderName">accountHolderName</label>
+                            <input type="text" class="form-control" name="accountHolderName" id="accountHolderName"
+                                placeholder="accountHolderName" formControlName="accountHolderName">
                         </div>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputphoto" name="photo"
-                                formControlName="documents.photo" value="documents.photo"
-                                (change)="onSelectPhoto($event)">
-                            <label class="custom-file-label" for="inputphoto">Choose file</label>
+                        <div class="form-group col-md-6">
+                            <label for="accountStatus">Account Status</label>
+                            <input type="text" class="form-control" name="accountStatus" id="accountStatus"
+                                placeholder="accountStatus" formControlName="accountStatus">
                         </div>
+                        <div class="form-group col-md-6">
+                            <label for="accountNumber">Account Number</label>
+                            <input type="number" class="form-control" name="accountNumber" id="accountNumber"
+                                placeholder="accountNumber"  formControlName="accountNumber">
+                        </div>
+                    </div>
+                    
+                </div>
+
+
+
+
+
+
+                <div class="form-row" formGroupName="propertyInfo">
+                    Property Information
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="propertyType">propertyType</label>
+                            <input type="text" class="form-control" name="propertyType" id="propertyType"
+                                placeholder="propertyType" formControlName="propertyType">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="propertyArea">propertyArea</label>
+                            <input type="text" class="form-control" name="propertyArea" id="propertyArea"
+                                placeholder="propertyArea" formControlName="propertyArea">
+                        </div>
+                        
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="constructionArea">Construction Area</label>
+                            <input type="text" class="form-control" name="constructionArea" id="constructionArea"
+                                placeholder="constructionArea" formControlName="constructionArea">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="propertyPrice">property Price</label>
+                            <input type="number" class="form-control" name="propertyPrice" id="propertyPrice"
+                                placeholder="propertyPrice" formControlName="propertyPrice">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="constructionPrice">constructionPrice</label>
+                            <input type="number" class="form-control" name="constructionPrice" id="constructionPrice"
+                                placeholder="constructionPrice"  formControlName="constructionPrice">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>Property Document</label> &nbsp;
+                            <input type="file" (change)="onSelectingpropertyDocuments($event)"> &nbsp;
+                            <img [src]="uploadedpropertyDocuments" height="50">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Price Proof</label> &nbsp;
+                            <input type="file" (change)="onSelectingpriceProofs($event)"> &nbsp;
+                            <img [src]="uploadedpriceProofs" height="50">
+                        </div>
+                    </div>
+
+                    <div class="form-row"  formGroupName="propertyAddress">
+                        <label style="text-align: center;">Property Address Details</label>
+                        
+                        <div class="form-group col-md-6">
+                            <div>
+                                <label for="streetName">Street Name</label>
+                                <input type="text" class="form-control" name="streetName"
+                                    id="streetName" placeholder="Street Name"
+                                    formControlName="streetName">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div>
+                                <label for="areaName">Area Name</label>
+                                <input type="text" class="form-control" name="areaName"
+                                    id="areaName" placeholder="Area Name"
+                                    formControlName="areaName">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div>
+                                <label for="cityName">City Name</label>
+                                <input type="text" class="form-control" name="cityName"
+                                    id="cityName" placeholder="City Name"
+                                    formControlName="cityName">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div>
+                                <label for="district">District</label>
+                                <input type="text" class="form-control" name="district"
+                                    id="district" placeholder="District"
+                                    formControlName="district">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div>
+                                <label for="state">state</label>
+                                <input type="text" class="form-control" name="state"
+                                    id="state" placeholder="state"
+                                    formControlName="state">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div>
+                                <label for="pincode">Pincode</label>
+                                <input type="number" class="form-control" name="pincode"
+                                    id="pincode" placeholder="Pincode"
+                                    formControlName="pincode">
+                            </div>
+                        </div>   
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <div class="input-group-prepend">
-                            <span>Cancel Bankcheque</span>
+
+
+
+
+
+
+
+
+                <div class="form-row" formGroupName="gurantorDetails">
+                    <label style="text-align: center;">Gurantor Details</label>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="gurantorName">GurantorName</label>
+                            <input type="text" class="form-control" name="gurantorName" id="gurantorName"
+                                placeholder="gurantorName" formControlName="gurantorName">
                         </div>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputbankcheque"
-                                name="documents.bankcheque" formControlName="bankcheque" value="documents.bankcheque"
-                                (change)="onSelectCheck($event)">
-                            <label class="custom-file-label" for="inputbankcheque">Choose file</label>
+                        <div class="form-group col-md-6">
+                            <label for="gurantorDateOfBirth">Gurantor DOB</label>
+                            <input type="text" class="form-control" name="gurantorDateOfBirth" id="gurantorDateOfBirth"
+                                placeholder="gurantorDateOfBirth" formControlName="gurantorDateOfBirth">
                         </div>
                     </div>
-                    <div class="form-group col-md-6">
-                        <div class="input-group-prepend">
-                            <span>Signature</span>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="gurantorRelationship">Gurantor Relation</label>
+                            <input type="text" class="form-control" name="gurantorRelationship" id="gurantorRelationship"
+                                placeholder="gurantorRelationship" formControlName="gurantorRelationship">
                         </div>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputsignature" name="signature"
-                                formControlName="documents.signature" value="documents.signature"
-                                (change)="onSelectSignature($event)">
-                            <label class="custom-file-label" for="inputsignature">Choose file</label>
+                        <div class="form-group col-md-6">
+                            <label for="gurantorMobileNumber">gurantorMobileNumber</label>
+                            <input type="number" class="form-control" name="gurantorMobileNumber" id="gurantorMobileNumber"
+                                placeholder="gurantorMobileNumber" formControlName="gurantorMobileNumber">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="gurantorAadharCardNo">gurantorAadharCardNo</label>
+                            <input type="number" class="form-control" name="gurantorAadharCardNo" id="gurantorAadharCardNo"
+                                placeholder="gurantorAadharCardNo"  formControlName="gurantorAadharCardNo">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="gurantorAddress">gurantorAddress</label>
+                            <input type="text" class="form-control" name="gurantorAddress" id="gurantorAddress"
+                                placeholder="gurantorAddress"  formControlName="gurantorAddress">
                         </div>
                     </div>
+                    
                 </div>
+
+
             </div>
+            <!-- Step 4 End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <!-- Previous Loan Information -->
             <div *ngIf="step==5">
@@ -757,13 +943,23 @@
 
             <div class="form-row">
                 <div class="form-group col-md-4" *ngIf="step!=1">
-                    <a class="btn btn-info" (click)="previousStep()">Previous</a>
+                    <a type="button" class="btn btn-info" (click)="previousStep()">Previous</a>
                 </div>
-                <div class="form-group col-md-4" *ngIf="step!=9">
-                    <a class="btn btn-primary" (click)="nextStep()">Save & Next</a>
+                <div class="form-group col-md-4" *ngIf="step!=4">
+                    <a type="button" class="btn btn-primary" (click)="nextStep()">Save & Next</a>
                 </div>
+
+                <!-- <div class="form-group col-md-4" *ngIf="step!=9">
+                    If you already have CustomerId, Enter Here to go to next step: 
+                        <input type="number" [(ngModel)]="enteredCustomerID" name="enteredCustomerId">
+                        <div >
+                            <!-- disabled="enteredCustomerId !== 0" -->
+                            <!-- <button class="btn btn-primary"  (click)="directNextStep(enteredCustomerId)">DirectNextStep</button>
+                        </div>
+                    
+                </div > --> 
                 <div class="form-group col-md-4">
-                    <button type="submit" class="btn btn-danger" *ngIf="step==9">Final Submit</button>
+                    <button type="submit" class="btn btn-danger" *ngIf="step==4">Final Submit</button>
                 </div>
 
             </div>

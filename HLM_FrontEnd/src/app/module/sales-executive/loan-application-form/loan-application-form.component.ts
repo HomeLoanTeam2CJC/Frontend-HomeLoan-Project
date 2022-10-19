@@ -9,6 +9,8 @@ import { CustomerApplicationService } from 'app/services/customer-application.se
 })
 export class LoanApplicationFormComponent implements OnInit {
 
+  enteredCustomerId: any
+
   constructor(private fb: FormBuilder, private service: CustomerApplicationService) { }
 
   customerApplicationForm: FormGroup;
@@ -64,7 +66,8 @@ export class LoanApplicationFormComponent implements OnInit {
       }),
       // allPersonalDocuments: this.fb.group({
 
-      // })
+
+      // }),
 
       familyInfo: this.fb.group({
         fatherName: [''],
@@ -167,7 +170,7 @@ export class LoanApplicationFormComponent implements OnInit {
         status:[''],
       }),
       loanAgreementBmSignStatus: [''],
-      loanAgreementCustomerSignStatus: [''],
+      // loanAgreementCustomerSignStatus: [''],
       loanDisbursementStatus: [''],
       loanDisbursement: this.fb.group({
         loanNumber: [''],
@@ -279,42 +282,62 @@ export class LoanApplicationFormComponent implements OnInit {
 
   randomNumber: number
   generateRandomNumber(){
-    alert("Genarate Random Number called")
+    alert("New Customer ID Generated")
     const nums = new Set();
     while(nums.size !== 1) {
       nums.add(Math.floor(Math.random() * 1000) + 1);
     }
     for(let n of nums){
-      this.savedCustomerId = n
+      this.generatedCustomerId = n
     }
   }
 
-  savedCustomerId: any 
+  generatedCustomerId: any 
 
+  
+  
 
+  directNextStep(enteredCustomerId: any){
+    this.enteredCustomerId = enteredCustomerId
+    this.step = this.step+1
+  }
+
+  // Save & Next Button calls this method
   nextStep(){
-
-    // alert('HouseNumber: '+this.customerApplicationForm.get('customerAddress').get('houseNumber').value)
-    // console.log('HouseNumber: '+this.customerApplicationForm.get('customerAddress').get('houseNumber').value)
 
     const customerApplication=JSON.stringify(this.customerApplicationForm.value);
 
     const customerFormData=new FormData();
     customerFormData.append("customerApplication",customerApplication);
 
-    
-    
-
     if(this.step==1){
-
       this.generateRandomNumber()
-      alert('SavedCustomerid= '+this.savedCustomerId)
-      this.service.saveStep1(customerFormData, this.savedCustomerId ).subscribe()
-      alert("Step1 saved")
+      alert('Please note down your customer Id for future use:  '+this.generatedCustomerId)
+      this.service.saveStep1(customerFormData, this.generatedCustomerId ).subscribe()
+      alert("Step 1 Saved")
     }
+
     else if(this.step==2){
-      this.service.saveStep2(customerFormData, this.savedCustomerId).subscribe()
+      this.service.saveStep2(customerFormData, this.generatedCustomerId).subscribe()
       alert("Step2 saved")
+    }
+
+    else if(this.step==3){
+
+      customerFormData.append("allPersonalDocuments.addressProof",this.addressProof);
+      customerFormData.append("allPersonalDocuments.panCard",this.panCard);
+      customerFormData.append("allPersonalDocuments.incomeTax",this.incomeTax);
+      customerFormData.append("allPersonalDocuments.aadharCard",this.aadharCard);
+      customerFormData.append("allPersonalDocuments.photo",this.photo);
+      customerFormData.append("allPersonalDocuments.thumbPrint",this.thumbPrint);
+      customerFormData.append("allPersonalDocuments.signature",this.signature);
+      customerFormData.append("allPersonalDocuments.bankCheque",this.bankCheque);
+      customerFormData.append("allPersonalDocuments.salarySlips",this.salarySlips);
+      customerFormData.append("propertyInfo.propertyDocuments",this.propertyDocuments);
+      customerFormData.append("propertyInfo.priceProofs",this.priceProofs);
+
+      this.service.saveStep3(customerFormData, this.generatedCustomerId).subscribe()
+      alert("Step3 saved")
     }
 
     this.step = this.step + 1
@@ -324,10 +347,26 @@ export class LoanApplicationFormComponent implements OnInit {
   }
 
 
+  //To save last step of Phase1 of Customer Application
+  savePhase1(){
+
+    const customerApplication=JSON.stringify(this.customerApplicationForm.value);
+
+    const customerFormData=new FormData();
+    customerFormData.append("customerApplication",customerApplication);
+    customerFormData.append("propertyInfo.propertyDocuments", this.propertyDocuments)
+    customerFormData.append("propertyInfo.priceProofs", this.priceProofs)
+
+    this.service.saveStep4(customerFormData, this.generatedCustomerId).subscribe()
+     alert("Step4 saved")
+
+  }
 
 
 
-  saveCustomerApplication() {
+
+
+  totalSaveCustomerApplication() {
 
     alert("Customer Details Form Submitted");
     const customerApplication=JSON.stringify(this.customerApplicationForm.value);
