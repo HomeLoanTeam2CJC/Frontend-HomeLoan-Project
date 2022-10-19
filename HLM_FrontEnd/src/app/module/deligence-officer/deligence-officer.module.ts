@@ -7,6 +7,7 @@ import { TechnicalCheckComponent } from './technical-check/technical-check.compo
 import { LegalCheckComponent } from './legal-check/legal-check.component';
 import { DoApplicationUpdateComponent } from './do-application-update/do-application-update.component';
 import { DoApplicationListComponent } from './do-application-list/do-application-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const deligencerouting: Routes = [
   {
@@ -22,18 +23,21 @@ const deligencerouting: Routes = [
     path: 'legal-check', component: LegalCheckComponent
   },
   {
-    path: 'do-application-list', component: DoApplicationListComponent
-  },
-  {
-    path: 'do-application-update', component: DoApplicationUpdateComponent
+    path: 'do-application-list', component: DoApplicationListComponent,
+    children:[
+      {
+        path: 'do-application-update', component: DoApplicationUpdateComponent
+      }
+    ]
   }
+  
 
 ]
 
 @NgModule({
   declarations: [FinancialCheckComponent, FieldInvestigationComponent, TechnicalCheckComponent, LegalCheckComponent, DoApplicationUpdateComponent, DoApplicationListComponent],
   imports: [
-    CommonModule,RouterModule.forChild(deligencerouting)
+    CommonModule,RouterModule.forChild(deligencerouting),ReactiveFormsModule, FormsModule
   ],
   exports:[FinancialCheckComponent,
     FieldInvestigationComponent, TechnicalCheckComponent, LegalCheckComponent,

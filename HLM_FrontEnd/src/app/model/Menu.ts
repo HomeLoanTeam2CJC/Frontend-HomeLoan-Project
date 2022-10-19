@@ -30,7 +30,7 @@ export class Menu {
           path: 'do-application-list', title: "Application List", icon: "pe-7s-graph", class: "" 
         },
         {
-          path: 'do-application-update', title: "Application Update", icon: "pe-7s-graph", class: "" 
+          path: 'do-application-list/do-application-update', title: "Application Update", icon: "pe-7s-graph", class: "" 
         }
       
       ],
