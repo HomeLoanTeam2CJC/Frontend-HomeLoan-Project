@@ -1,0 +1,62 @@
+<div class="overall">
+    <h1 class="h">Sanction Letter Form</h1>
+    <div class="container">
+        
+
+    <form [formGroup]="sanctionLetterForm" (ngSubmit)="submitSanctionForm()">
+        <div class="form-row">
+          <div class="col-md-6">
+            
+              <div class="form-group">
+                  <label for="sanctionDate">Sanction Date</label>
+                  <input type="text" class="form-control" id="sanctionDate" aria-describedby="nameHelp" placeholder="Sanction Date" formControlName="sanctionDate">
+                 
+              </div>
+              <div class="form-group">
+                <label for="contactDetails">Contact Details</label>
+                <input type="number" class="form-control" id="contactDetails" aria-describedby="dobHelp" placeholder="Contact Details" formControlName="contactDetails">
+               
+              </div>
+              <div class="form-group">
+                <label for="maxEmi">Max Emi</label>
+                <input type="number" class="form-control" id="maxEmi" aria-describedby="dobHelp" placeholder="Max Emi" formControlName="maxEmi">
+                
+              </div>
+              <div class="form-group">
+                <label for="validity">Validity</label>
+                <input type="number" class="form-control" id="validity" aria-describedby="dobHelp" placeholder="Validity" formControlName="validity">
+                
+              </div>
+              
+
+              <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
+              <button class="btn btn-primary" (click)="reset()">Clear</button>
+            </div>
+
+         
+      
+          <div class="col-md-6">
+            <div class="form-group">
+                <label for="applicantName">Applicant Name</label>
+                <input type="text" class="form-control" id="applicantName" aria-describedby="nameHelp" placeholder="Applicant Name" formControlName="applicantName">
+               
+            </div>
+            <div class="form-group">
+                <label for="maxSanctionAmount">Max Sanction Amount</label>
+                <input type="number" class="form-control" id="maxSanctionAmount" aria-describedby="nameHelp" placeholder="Max Sanction Amount" formControlName="maxSanctionAmount">
+                
+            </div>
+            <div class="form-group">
+                <label for="averageTenure">Average Tenure</label>
+                <input type="number" class="form-control" id="averageTenure" aria-describedby="nameHelp" placeholder="Average Tenure" formControlName="averageTenure">
+                
+            </div>
+            
+        
+          </div>
+        </div>
+    </form>
+    </div>
+</div>
+<router-outlet></router-outlet>
+
