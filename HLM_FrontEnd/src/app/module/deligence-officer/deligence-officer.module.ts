@@ -26,7 +26,7 @@ const deligencerouting: Routes = [
     path: 'do-application-list', component: DoApplicationListComponent,
     children:[
       {
-        path: 'do-application-update', component: DoApplicationUpdateComponent
+        path: 'do-application-update/:customerId', component: DoApplicationUpdateComponent
       }
     ]
   }

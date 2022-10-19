@@ -18,6 +18,7 @@ export class DoApplicationListComponent implements OnInit {
       this.customerList = customerData
     })
 
+
   }
 
 }
