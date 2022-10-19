@@ -4,12 +4,15 @@ import { BmApplicationListComponent } from './bm-application-list/bm-application
 import { BmApplicationUpdateComponent } from './bm-application-update/bm-application-update.component';
 import { RouterModule, Routes } from '@angular/router';
 
+
 const bmroutes: Routes = [
 {
-  path: 'bm-application-list', component: BmApplicationListComponent
-},
-{
-  path: 'bm-application-update', component: BmApplicationUpdateComponent
+  path: 'bm-application-list', component: BmApplicationListComponent,
+  children:[
+    {
+      path:'bm-application-update', component: BmApplicationUpdateComponent
+    }
+  ]
 }
 ]
 
