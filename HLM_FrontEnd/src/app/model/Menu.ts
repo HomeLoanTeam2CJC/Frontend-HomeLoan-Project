@@ -31,6 +31,9 @@ export class Menu {
         },
         {
           path: 'do-application-list/do-application-update', title: "Application Update", icon: "pe-7s-graph", class: "" 
+        },
+        {
+          path: 'sanctionletterform', title: "Sanction Letter Form", icon: "pe-7s-graph", class: "" 
         }
       
       ],
