@@ -51,7 +51,7 @@ export class Menu {
           path: 'bm-application-list' , title: "Application List", icon: "pe-7s-graph", class: ""
         },
         {
-          path: 'bm-application-update' , title: "Application Update", icon: "pe-7s-graph", class: ""
+          path: 'bm-application-list/bm-application-update' , title: "Application Update", icon: "pe-7s-graph", class: ""
         }
       ],
 
