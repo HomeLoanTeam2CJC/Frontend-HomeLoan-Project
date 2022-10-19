@@ -14,7 +14,7 @@ export class LoanApplicationListComponent implements OnInit {
   customerList: Customer[]
   ngOnInit(): void {
     this.service.getCustomerList().subscribe((dataList: Customer[])=>{
-      this.customerList = dataList
+      this.customerList = dataList;
     })
 
   }

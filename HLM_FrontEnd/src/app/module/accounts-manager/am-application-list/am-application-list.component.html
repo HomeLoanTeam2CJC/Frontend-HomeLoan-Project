@@ -1,1 +1,38 @@
-<p>am-application-list works!</p>
+<div class="jumbotron"> 
+    <h1>Loan Application List</h1>
+    <div>
+        <table class="table table-hover table-light table-striped" >
+            <thead style="text-align: center;">
+                <tr style="color: blue; background-color: darkgrey;">
+                    <th>Customer Id</th>
+                    <th>Customer Name</th>
+                    <th>Customer Email</th>
+                    <th>Customer Mobile No</th>
+                    <th>Deligence Status</th>  
+                    <th>Branch Manager Status</th>
+                    <th>Customer Acceptance Status</th>
+                    <th>Loan Agreement Status</th>
+                    <th>Loan Disbursement Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of customerList">
+                    <td>{{s.customerId}}</td>
+                    <td>{{s.customerName}}</td>
+                    <td>{{s.customerEmail}}</td>
+                    <td>{{s.customerMobileNumber}}</td>
+                    <td>{{s.deligenceStatus}}</td>
+                    <td>{{s.doReportBmResponseStatus}}</td>
+                     <td>{{s.customerAcceptanceStatus}}</td>
+                    <td>{{s.sanctionLetterStatus}}</td>
+                     <td>{{s.loanAgreementStatus}}</td>
+                      <td>{{s.loanDisbursementStatus}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <button class="btn-info" type="submit" (click)="goback()" style="margin-left: 600px;">Back</button> -->
+    </div>
+    </div>
+    
+    
+    <router-outlet></router-outlet>
