@@ -11,5 +11,6 @@ export class AboutusComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  myimage:String="assets/images/Image2.jpg";
+  myimageone:String="assets/images/nikhil.jpg";
 }

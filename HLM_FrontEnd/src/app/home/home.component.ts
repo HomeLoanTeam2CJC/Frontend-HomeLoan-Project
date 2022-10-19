@@ -8,10 +8,14 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  
+
   constructor(private route:Router) { }
 
   ngOnInit(): void {
   }
+  myimage:String="assets/images/HomeloanImages1.webp";
+  
   log()
   {
   this.route.navigate(["/log"])
