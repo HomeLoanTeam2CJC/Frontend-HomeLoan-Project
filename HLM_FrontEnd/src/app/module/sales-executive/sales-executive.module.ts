@@ -9,6 +9,7 @@ import { LoanApplicationFormComponent } from './loan-application-form/loan-appli
 import { LoanApplicationListComponent } from './loan-application-list/loan-application-list.component';
 import { ApplicationDetailsComponent } from './application-details/application-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomerAcceptanceComponent } from './customer-acceptance/customer-acceptance.component';
 
 const salesrouting: Routes = [
   {
@@ -24,7 +25,12 @@ const salesrouting: Routes = [
     path: 'loan-application-form', component: LoanApplicationFormComponent
   },
   {
-    path: 'loan-application-list', component: LoanApplicationListComponent
+    path: 'loan-application-list', component: LoanApplicationListComponent,
+    children: [
+      {
+        path: 'customer-acceptance/:customerId', component: CustomerAcceptanceComponent
+      }
+    ]
   },
   {
     path: 'application-details', component: ApplicationDetailsComponent
@@ -38,13 +44,13 @@ const salesrouting: Routes = [
 
 
 @NgModule({
-  declarations: [SchemesComponent, EnquiryFormComponent, EnquiryListComponent, EmiCalcComponent, LoanApplicationFormComponent, LoanApplicationListComponent, ApplicationDetailsComponent],
+  declarations: [SchemesComponent, EnquiryFormComponent, EnquiryListComponent, EmiCalcComponent, LoanApplicationFormComponent, LoanApplicationListComponent, ApplicationDetailsComponent, CustomerAcceptanceComponent],
   imports: [
     CommonModule, RouterModule.forChild(salesrouting), ReactiveFormsModule, FormsModule
   ],
   exports:[
     SchemesComponent,
-    EnquiryFormComponent, EnquiryListComponent, EmiCalcComponent, LoanApplicationFormComponent, LoanApplicationListComponent, ApplicationDetailsComponent
+    EnquiryFormComponent, EnquiryListComponent, EmiCalcComponent, LoanApplicationFormComponent, LoanApplicationListComponent, ApplicationDetailsComponent, CustomerAcceptanceComponent
   ]
 })
 export class SalesExecutiveModule { }

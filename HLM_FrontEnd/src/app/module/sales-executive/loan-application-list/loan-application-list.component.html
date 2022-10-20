@@ -27,22 +27,30 @@
                 <td>
                     <button disabled>{{s.deligenceStatus}}</button>    
                 </td>
-                <div *ngIf="s.deligenceStatus">
-                    <td>
+                <td>
+                    <div *ngIf="s.deligenceStatus">
+                    
                         <button disabled>{{s.doReportBmResponseStatus}}</button>  
-                    </td>
-                </div>
-                <td *ngIf="s.doReportBmResponseStatus">
-                    <div *ngIf="s.sanctionLetterStatus===null">
-                        <button>Generate</button>
+                    
                     </div>
-                    <div *ngIf="s.sanctionLetterStatus!==null">
-                        <button>{{s.sanctionLetterStatus}}</button>
-                    </div>        
                 </td>
-                 <td>
-                    {{s.customerAcceptanceStatus}}
-                </td>
+                <td>
+                    <button type="button" class="btn btn-success" *ngIf="s.sanctionLetterStatus">{{s.sanctionLetterStatus}}
+                    </button>
+                    <button type="button" class="btn btn-warning" *ngIf="s.sanctionLetterStatus==null">Pending
+                    </button>
+                  </td>
+                <td>
+                    <button type="button" class="btn btn-success" *ngIf="s.customerAcceptanceStatus!=null">
+                        {{s.customerAcceptanceStatus}}
+                    </button>
+                    <button type="button" class="btn btn-warning" *ngIf="s.customerAcceptanceStatus==null"
+                       (click)="customerAcceptance(s.customerId)">Pending
+                    </button>
+                    <!-- <button type="button" class="btn btn-warning" *ngIf="s.customerAcceptanceStatus==null"
+                        [routerLink]="['customer-acceptance', s.customerId]" [state]="s">Pending
+                    </button> -->
+                  </td>
                 <td>
                     {{s.sanctionLetterStatus}}
                 </td>

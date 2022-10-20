@@ -19,6 +19,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/loan-application-list',     title: 'Sales Executive : Loan Application List',         icon:'nc-bank',       class: '' },
     { path: '/application-details',     title: 'Sales Executive : Application Details',         icon:'nc-bank',       class: '' },
     { path: '/emi-calc',     title: 'Sales Executive : EMI Calculator',         icon:'nc-bank',       class: '' },
+    { path: '/customer-acceptance',     title: 'Sales Executive : Customer Acceptance',         icon:'nc-bank',       class: '' },
 
 
     //Deligence Officer Module
@@ -51,6 +52,9 @@ export const ROUTES: RouteInfo[] = [
     },
     {
         path: '/bm-application-update',     title: 'Application Update For Branch Manager',         icon:'nc-bank',       class: ''
+    },
+    {
+      path: '/view-sanction-letter' , title: "View Sanction Letter  For Branch Manager", icon: "pe-7s-graph", class: ""
     },
 
     //Accounts Manager Module
