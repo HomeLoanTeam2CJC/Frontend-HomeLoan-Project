@@ -17,8 +17,9 @@ export class CustomerApplicationService {
   step3Url: string = 'http://localhost:9090/step3Api/'
   step4Url: string = 'http://localhost:9090/step4Api/'
   step5Url: string = 'http://localhost:9090/step5Api/'
+  step5Point5: string = 'http://localhost:9090/step5Point5Api/'
   step6Url: string = 'http://localhost:9090/step6Api/'
-  stepSanctionLetter: string = 'step5.1 api'
+  
 
   saveCutomerApplication(customerApplication : any){
 
@@ -50,14 +51,15 @@ export class CustomerApplicationService {
     return this.http.post(this.step5Url+"postStep5/"+existingCustomerId, deligenceFormData)
   }
 
+  sanctionLetterData(sanctionLetterData: any, existingCustomerId: any){
+    return this.http.post(this.step5Point5+"postStep5Point5/"+existingCustomerId, sanctionLetterData)
+  }
+  
   branchManagermResponse(customerFormData: any, existingCustomerId: any){
     return this.http.post(this.step6Url+"postStep6/"+existingCustomerId, customerFormData)
   }
 
-  sanctionLetterData(sanctionLetterData: any){
-
-    return this.http.post(this.stepSanctionLetter, sanctionLetterData)
-  }
+  
 
 
 

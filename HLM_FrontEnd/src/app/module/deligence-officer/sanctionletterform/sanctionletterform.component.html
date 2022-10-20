@@ -2,8 +2,12 @@
     <h1 class="h">Sanction Letter Form</h1>
     <div class="container">
         
+      <div class="form-group col-md-12">
+        <button class="btn btn-danger btn-block btn-lg" disabled>Customer ID: {{existingCustomerId}}</button>
+     </div>
 
-    <form [formGroup]="sanctionLetterForm" (ngSubmit)="submitSanctionForm()">
+    <form [formGroup]="customerForm" (ngSubmit)="submitSanctionForm()">
+      <div formGroupName="sanctionLetter">
         <div class="form-row">
           <div class="col-md-6">
             
@@ -29,8 +33,7 @@
               </div>
               
 
-              <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
-              <button class="btn btn-primary" (click)="reset()">Clear</button>
+              
             </div>
 
          
@@ -55,6 +58,15 @@
         
           </div>
         </div>
+
+      </div>
+      <div>
+        <div class="form-group">
+          <label for="sanctionLetterStatus">sanctionLetterStatus</label>
+          <input type="text" class="form-control" id="sanctionLetterStatus" aria-describedby="sanctionLetterStatus" placeholder="sanctionLetterStatus" formControlName="sanctionLetterStatus">  
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
     </form>
     </div>
 </div>

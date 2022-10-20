@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { CustomerApplicationService } from 'app/services/customer-application.service';
 
 @Component({
@@ -9,26 +10,51 @@ import { CustomerApplicationService } from 'app/services/customer-application.se
 })
 export class SanctionletterformComponent implements OnInit {
 
-  constructor(private service:CustomerApplicationService,private fb: FormBuilder) { }
-  sanctionLetterForm: FormGroup
-  ngOnInit(): void {
-    this.sanctionLetterForm = this.fb.group({
+  constructor(private service:CustomerApplicationService,private fb: FormBuilder, private routes: ActivatedRoute) { }
 
-      sanctionDate:[''],
-      applicantName:[''],
-      contactDetails:[],
-      maxSanctionAmount:[],
-      maxEmi:[],
-      averageTenure:[],
-      validity:[],
+  existingCustomerId: any
+  customerForm: FormGroup
+  ngOnInit(): void {
+    this.customerForm = this.fb.group({
+
+      sanctionLetterStatus: [''],
+      sanctionLetter: this.fb.group({
+          sanctionDate:[''],
+          applicantName:[''],
+          contactDetails:[],
+          maxSanctionAmount:[],
+          maxEmi:[],
+          averageTenure:[],
+          validity:[],
+        })
       
   })
+    this.getCustomerState()
   }
-  submitSanctionForm()
-  {
+
+  getCustomerState(){
+
+    this.routes.paramMap.subscribe(param1=>{
+      let cId= param1.get('customerId');
+      let customerId=parseInt(cId);
+      console.log('customerID: '+customerId)
+      this.existingCustomerId = customerId
+      
+    })
 
   }
-  reset(){
-    
+
+  
+  submitSanctionForm()
+  {
+    alert("submitSanctionForm() called")
+
+    const customerFormJson = JSON.stringify(this.customerForm.value)
+
+    const customerFormData = new FormData
+    customerFormData.append('customerApplication', customerFormJson)
+
+    this.service.sanctionLetterData(customerFormData, this.existingCustomerId).subscribe()
+
   }
 }

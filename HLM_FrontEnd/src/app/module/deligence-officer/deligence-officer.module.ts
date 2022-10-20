@@ -31,6 +31,9 @@ const deligencerouting: Routes = [
     children:[
       {
         path: 'do-application-update/:customerId', component: DoApplicationUpdateComponent
+      },
+      {
+        path: 'sanction-letter-form/:customerId', component: SanctionletterformComponent
       }
     ]
   }

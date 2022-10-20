@@ -5,9 +5,9 @@
         <th scope="col">Customer ID</th>
         <th scope="col">Customer Name</th>
         <th scope="col">PAN Number</th>
-        <th scope="col">Pancard photo</th>
         <th>Deligence Status</th>
-        <th scope="col">Action</th>
+        <th>Sanction Letter</th>
+        <!-- <th scope="col">Action</th> -->
       </tr>
     </thead>
     <tbody >
@@ -15,12 +15,20 @@
         <th scope="row">{{c.customerId}}</th>
         <td>{{c.customerName}}</td>
         <td>{{c.pan}}</td>
-        <td></td>
-        <td >
-          <button type="button" class="btn btn-success" *ngIf="c.deligenceReportStatus" >{{c.deligenceReportStatus}}</button>
+        <td>
+          <button type="button" class="btn btn-success" *ngIf="c.deligenceReportStatus" [routerLink]="['do-application-update', c.customerId]" [state]="c" >{{c.deligenceReportStatus}}</button>
           <button type="button" class="btn btn-warning" *ngIf="c.deligenceReportStatus==null">Pending</button>
         </td>
-        <td><button class="btn btn-primary" [routerLink]="['do-application-update', c.customerId]" [state]="c">Update</button></td>
+        <td>
+          <button type="button" class="btn btn-success" *ngIf="c.sanctionLetterStatus"
+              [routerLink]="['sanction-letter-form', c.customerId]" [state]="c">{{c.sanctionLetterStatus}}
+          </button>
+          <button type="button" class="btn btn-warning" *ngIf="c.sanctionLetterStatus==null"
+              [routerLink]="['sanction-letter-form', c.customerId]" [state]="c">Pending
+          </button>
+        </td>
+
+        <!-- <td><button class="btn btn-primary" [routerLink]="['do-application-update', c.customerId]" [state]="c">Update</button></td> -->
       </tr>
       
     </tbody>
