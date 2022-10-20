@@ -7,6 +7,7 @@
         <th scope="col">PAN Number</th>
         <th>Deligence Status</th>
         <th>Sanction Letter</th>
+        <th>Loan Agreement</th>
         <!-- <th scope="col">Action</th> -->
       </tr>
     </thead>
@@ -15,6 +16,7 @@
         <th scope="row">{{c.customerId}}</th>
         <td>{{c.customerName}}</td>
         <td>{{c.pan}}</td>
+      
         <td>
           <button type="button" class="btn btn-success" *ngIf="c.deligenceReportStatus" [routerLink]="['do-application-update', c.customerId]" [state]="c" >{{c.deligenceReportStatus}}</button>
           <button type="button" class="btn btn-warning" *ngIf="c.deligenceReportStatus==null" [routerLink]="['do-application-update', c.customerId]">Pending</button>
@@ -27,6 +29,15 @@
               [routerLink]="['sanction-letter-form', c.customerId]" [state]="c">Pending
           </button>
         </td>
+        <td>
+          <button type="button" class="btn btn-success" *ngIf="c.loanAgreementStatus"
+              [routerLink]="['loanagreementform', c.customerId]" [state]="c">{{c.loanAgreementStatus}}
+          </button>
+          <button type="button" class="btn btn-warning" *ngIf="c.loanAgreementStatus==null"
+              [routerLink]="['loanagreementform', c.customerId]" [state]="c">Pending
+          </button>
+        </td>
+        
 
         <!-- <td><button class="btn btn-primary" [routerLink]="['do-application-update', c.customerId]" [state]="c">Update</button></td> -->
       </tr>

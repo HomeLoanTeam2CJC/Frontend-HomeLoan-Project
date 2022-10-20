@@ -20,6 +20,7 @@ export class CustomerApplicationService {
   step5Point5: string = 'http://localhost:9090/step5Point5Api/'
   step6Url: string = 'http://localhost:9090/step6Api/'
   step7Url: string = 'http://localhost:9090/step7Api/'
+  step8Url: string = 'http://localhost:9090/step8Api/'
   // 
   
 
@@ -65,7 +66,9 @@ export class CustomerApplicationService {
     return this.http.post(this.step7Url+"postStep7/"+existingCustomerId, customerFormData)
   }
 
-  
+  submitLoanAgreement(customerFormData : any,existingCustomerId : any){
+    return this.http.post(this.step8Url+"postStep8/"+existingCustomerId,customerFormData)
+  }
 
 
 

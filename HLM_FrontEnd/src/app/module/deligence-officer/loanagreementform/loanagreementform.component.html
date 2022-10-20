@@ -1,15 +1,20 @@
 <div class="overall">
-    <h1 class="h">Laon Agreement Form</h1>
+    <h1 class="h">Loan Agreement Form</h1>
     <div class="container">
       
+      <div class="form-group col-md-12">
+        <button class="btn btn-danger btn-block btn-lg" disabled>Customer ID: {{existingCustomerId}}</button>
+     </div>
 
-    <form [formGroup]="loanAgreementForm" (ngSubmit)="submitLoanagreementForm()">
+    <form [formGroup]="customerForm" (ngSubmit)="submitLoanagreementForm()">
         <div class="form-row">
           <div class="col-md-6">
             
-              <div class="form-group">
+            <div formGroupName="loanAgreement">
+
+               <div class="form-group">
                   <label for="loanAgreementName">Loan Agreement Name</label>
-                  <input type="number" class="form-control" id="loanAgreementName" aria-describedby="nameHelp" placeholder="Loan Agreement Name" formControlName="loanAgreementName">
+                  <input type="text" class="form-control" id="loanAgreementName" aria-describedby="nameHelp" placeholder="Loan Agreement Name" formControlName="loanAgreementName">
                   
               </div>
               <div class="form-group">
@@ -37,45 +42,46 @@
                 <input type="text" class="form-control" id="status" aria-describedby="dobHelp" placeholder=" Status" formControlName="status">
               
               </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                    <label for="applicantName">Applicant Name</label>
+                    <input type="text" class="form-control" id="applicantName" aria-describedby="nameHelp" placeholder="Applicant Name" formControlName="applicantName">
+                    
+                </div>
+                <div class="form-group">
+                    <label for="loanAmountSanctioned">Loan Amount Sanctioned</label>
+                    <input type="number" class="form-control" id="loanAmountSanctioned" aria-describedby="nameHelp" placeholder="Loan Amount Sanctioned" formControlName="loanAmountSanctioned">
+                    
+                </div>
+                <div class="form-group">
+                    <label for="rateOfInterest">Rate Of Interest</label>
+                    <input type="number" class="form-control" id="rateOfInterest" aria-describedby="nameHelp" placeholder="Rate Of Interest" formControlName="rateOfInterest">
+                   
+                </div>
+                <div class="form-group">
+                    <label for="monthlyEmiAmount">Monthly Emi Amount</label>
+                    <input type="number" class="form-control" id="monthlyEmiAmount" aria-describedby="nameHelp" placeholder="Monthly Emi Amount" formControlName="monthlyEmiAmount">
+                   
+                </div>
+                <div class="form-group">
+                    <label for="Remarks">remarks</label>
+                    <input type="text" class="form-control" id="remarks" aria-describedby="nameHelp" placeholder="Remarks" formControlName="remarks">
+                    
+                </div>
+               
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="loanAgreementStatus">Loan Agreement Status</label>
+              <input type="text" class="form-control" id="loanAgreementStatus" aria-describedby="nameHelp" placeholder="Loan Agreement Name" formControlName="loanAgreementStatus">
               
-              
-
+          </div>
               <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
               <button class="btn btn-primary" (click)="reset()">Clear</button>
             </div>
 
+
          
-      
-          <div class="col-md-6">
-            <div class="form-group">
-                <label for="applicantName">Applicant Name</label>
-                <input type="text" class="form-control" id="applicantName" aria-describedby="nameHelp" placeholder="Applicant Name" formControlName="applicantName">
-                
-            </div>
-            <div class="form-group">
-                <label for="loanAmountSanctioned">Loan Amount Sanctioned</label>
-                <input type="number" class="form-control" id="loanAmountSanctioned" aria-describedby="nameHelp" placeholder="Loan Amount Sanctioned" formControlName="loanAmountSanctioned">
-                
-            </div>
-            <div class="form-group">
-                <label for="rateOfInterest">Rate Of Interest</label>
-                <input type="number" class="form-control" id="rateOfInterest" aria-describedby="nameHelp" placeholder="Rate Of Interest" formControlName="rateOfInterest">
-               
-            </div>
-            <div class="form-group">
-                <label for="monthlyEmiAmount">Monthly Emi Amount</label>
-                <input type="number" class="form-control" id="monthlyEmiAmount" aria-describedby="nameHelp" placeholder="Monthly Emi Amount" formControlName="monthlyEmiAmount">
-               
-            </div>
-            <div class="form-group">
-                <label for="Remarks">remarks</label>
-                <input type="text" class="form-control" id="remarks" aria-describedby="nameHelp" placeholder="Remarks" formControlName="remarks">
-                
-            </div>
-           
-           
-        
-          </div>
         </div>
     </form>
     </div>

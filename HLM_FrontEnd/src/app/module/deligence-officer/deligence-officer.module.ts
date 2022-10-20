@@ -28,9 +28,6 @@ const deligencerouting: Routes = [
     path: 'legal-check', component: LegalCheckComponent
   },
   {
-    path: 'loanagreementform', component: LoanagreementformComponent
-  },
-  {
     path: 'do-application-list', component: DoApplicationListComponent,
     children:[
       {
@@ -38,6 +35,9 @@ const deligencerouting: Routes = [
       },
       {
         path: 'sanction-letter-form/:customerId', component: SanctionletterformComponent
+      },
+      {
+        path: 'loanagreementform/:customerId', component: LoanagreementformComponent
       }
     ]
   }
