@@ -35,6 +35,9 @@ export const ROUTES: RouteInfo[] = [
     {
       path: '/sanction-letter-form',     title: 'Sanction Letter form  For Deligence Officer',         icon:'nc-bank',       class: ''
     },
+    {
+      path: '/loanagreementform',     title: 'Loan Agreement Form  For Deligence Officer',         icon:'nc-bank',       class: ''
+    },
 
 
     //Operational Executive module

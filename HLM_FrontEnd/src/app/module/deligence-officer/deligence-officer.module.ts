@@ -9,6 +9,7 @@ import { DoApplicationUpdateComponent } from './do-application-update/do-applica
 import { DoApplicationListComponent } from './do-application-list/do-application-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SanctionletterformComponent } from './sanctionletterform/sanctionletterform.component';
+import { LoanagreementformComponent } from './loanagreementform/loanagreementform.component';
 
 const deligencerouting: Routes = [
   {
@@ -27,6 +28,9 @@ const deligencerouting: Routes = [
     path: 'legal-check', component: LegalCheckComponent
   },
   {
+    path: 'loanagreementform', component: LoanagreementformComponent
+  },
+  {
     path: 'do-application-list', component: DoApplicationListComponent,
     children:[
       {
@@ -42,12 +46,13 @@ const deligencerouting: Routes = [
 ]
 
 @NgModule({
-  declarations: [FinancialCheckComponent, FieldInvestigationComponent, TechnicalCheckComponent, LegalCheckComponent, DoApplicationUpdateComponent, DoApplicationListComponent, SanctionletterformComponent],
+  declarations: [FinancialCheckComponent, FieldInvestigationComponent, TechnicalCheckComponent, LegalCheckComponent,
+     DoApplicationUpdateComponent, DoApplicationListComponent, SanctionletterformComponent, LoanagreementformComponent],
   imports: [
     CommonModule,RouterModule.forChild(deligencerouting),ReactiveFormsModule, FormsModule
   ],
   exports:[FinancialCheckComponent,
     FieldInvestigationComponent, TechnicalCheckComponent, LegalCheckComponent,
-    DoApplicationUpdateComponent, DoApplicationListComponent,SanctionletterformComponent]
+    DoApplicationUpdateComponent, DoApplicationListComponent,SanctionletterformComponent,LoanagreementformComponent]
 })
 export class DeligenceOfficerModule { }
