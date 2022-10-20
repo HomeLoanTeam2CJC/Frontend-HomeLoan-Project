@@ -37,6 +37,9 @@ export class Menu {
         },
         {
           path: 'do-application-list/sanction-letter-form', title: "Sanction Letter Form", icon: "pe-7s-graph", class: "" 
+        },
+        {
+          path: 'loanagreementform', title: "Loan Agreement Form", icon: "pe-7s-graph", class: "" 
         }
       
       ],
