@@ -17,7 +17,7 @@
         <td>{{c.pan}}</td>
         <td>
           <button type="button" class="btn btn-success" *ngIf="c.deligenceReportStatus" [routerLink]="['do-application-update', c.customerId]" [state]="c" >{{c.deligenceReportStatus}}</button>
-          <button type="button" class="btn btn-warning" *ngIf="c.deligenceReportStatus==null">Pending</button>
+          <button type="button" class="btn btn-warning" *ngIf="c.deligenceReportStatus==null" [routerLink]="['do-application-update', c.customerId]">Pending</button>
         </td>
         <td>
           <button type="button" class="btn btn-success" *ngIf="c.sanctionLetterStatus"

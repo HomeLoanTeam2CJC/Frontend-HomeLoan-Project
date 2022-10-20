@@ -9,7 +9,10 @@ export class Menu {
             {path: "loan-application-list", title: "Loan Application List", icon: "pe-7s-graph", class: "" },
             {path: "enquiry-form", title: "Enquiry Form", icon: "pe-7s-graph", class: "" },
             {path: "enquiry-list", title: "Enquiry List", icon: "pe-7s-graph", class: "" },
-            {path: "emi-calc", title: "EMI Calculator", icon: "pe-7s-graph", class: "" }
+            {path: "emi-calc", title: "EMI Calculator", icon: "pe-7s-graph", class: "" },
+            {
+              path: 'loan-application-list/customer-acceptance', title: "Customer Acceptance Form", icon: "pe-7s-graph", class: ""
+            }
           ],
 
           //Deligence officer Module
@@ -34,6 +37,9 @@ export class Menu {
         },
         {
           path: 'do-application-list/sanction-letter-form', title: "Sanction Letter Form", icon: "pe-7s-graph", class: "" 
+        },
+        {
+          path: 'loanagreementform', title: "Loan Agreement Form", icon: "pe-7s-graph", class: "" 
         }
       
       ],
@@ -55,6 +61,9 @@ export class Menu {
         },
         {
           path: 'bm-application-list/bm-application-update' , title: "Application Update", icon: "pe-7s-graph", class: ""
+        },
+        {
+          path: 'bm-application-list/view-sanction-letter' , title: "View Sanction Letter", icon: "pe-7s-graph", class: ""
         }
       ],
 

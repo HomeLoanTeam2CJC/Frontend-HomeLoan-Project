@@ -19,6 +19,7 @@ export class SanctionletterformComponent implements OnInit {
 
       sanctionLetterStatus: [''],
       sanctionLetter: this.fb.group({
+          sanctionId: [],
           sanctionDate:[''],
           applicantName:[''],
           contactDetails:[],

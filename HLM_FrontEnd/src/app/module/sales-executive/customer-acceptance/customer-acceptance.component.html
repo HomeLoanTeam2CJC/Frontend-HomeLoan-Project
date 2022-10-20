@@ -1,0 +1,13 @@
+
+
+<form [formGroup]="customerForm" (ngSubmit)="submitCustomerForm()">
+    <div class="form-row">
+      <div class="col-md-6">
+        
+          <div class="form-group">
+              <label for="custaccept">Customer Acceptance Status</label>
+              <input type="text" class="form-control" id="custaccept" aria-describedby="custaccept" placeholder="Customer Repsonse" formControlName="customerAcceptanceStatus">
+          </div>
+        </div>
+    </div>
+</form>

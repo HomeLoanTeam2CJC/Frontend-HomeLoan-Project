@@ -5,6 +5,7 @@
         <th scope="col">Customer ID</th>
         <th scope="col">Customer Name</th>
         <th scope="col">Deligence Status</th>
+        <th scope="col">Sanction Letter</th>
         <th scope="col">BM status</th>
       </tr>
     </thead>
@@ -15,6 +16,11 @@
         <td>
             <button type="button" class="btn btn-success" *ngIf="c.deligenceReportStatus" >{{c.deligenceReportStatus}}</button>
             <button type="button" class="btn btn-warning" *ngIf="c.deligenceReportStatus==null">Pending</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-success" *ngIf="c.sanctionLetterStatus" [routerLink]="['view-sanction-letter', c.customerId]">{{c.sanctionLetterStatus}}</button> <!-- add routing to open sanction letter form -->
+            <button type="button" class="btn btn-warning" *ngIf="c.sanctionLetterStatus==null">Pending</button>
+            
         </td>
         <td>
           <div *ngIf="c.doReportBmResponseStatus">
