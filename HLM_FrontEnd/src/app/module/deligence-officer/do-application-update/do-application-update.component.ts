@@ -56,6 +56,7 @@ export class DoApplicationUpdateComponent implements OnInit {
     this.routes.paramMap.subscribe(param1=>{
       let cId= param1.get('customerId');
       let customerId=parseInt(cId);
+      console.log('customerID: '+customerId)
       this.existingCustomerId = customerId
       
     })

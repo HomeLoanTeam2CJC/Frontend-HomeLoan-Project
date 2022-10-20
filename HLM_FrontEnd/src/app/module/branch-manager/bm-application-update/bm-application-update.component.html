@@ -10,10 +10,14 @@
     </div>
     </div>
   </form>  -->
+
+  <div class="form-group col-md-12">
+    <button class="btn btn-danger btn-block btn-lg" disabled>Customer ID: {{existingCustomerId}}</button>
+ </div>
   
        
 
-    <form [formGroup]="bankManagerReportForm" (ngSubmit)="updateBankManagerReport()">
+    <form [formGroup]="customerForm" (ngSubmit)="updateBankManagerReport()">
 
         <div>
             <div class="form-group">

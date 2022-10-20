@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BmApplicationListComponent } from './bm-application-list/bm-application-list.component';
 import { BmApplicationUpdateComponent } from './bm-application-update/bm-application-update.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const bmroutes: Routes = [
@@ -10,7 +11,7 @@ const bmroutes: Routes = [
   path: 'bm-application-list', component: BmApplicationListComponent,
   children:[
     {
-      path:'bm-application-update', component: BmApplicationUpdateComponent
+      path:'bm-application-update/:customerId', component: BmApplicationUpdateComponent
     }
   ]
 }
@@ -19,7 +20,7 @@ const bmroutes: Routes = [
 @NgModule({
   declarations: [BmApplicationListComponent, BmApplicationUpdateComponent],
   imports: [
-    CommonModule, RouterModule.forChild(bmroutes)
+    CommonModule, RouterModule.forChild(bmroutes), ReactiveFormsModule, FormsModule
     
   ],
   exports: [
