@@ -125,7 +125,7 @@ export class LoanApplicationFormComponent implements OnInit {
         gurantorAadharCardNo: [''],
         gurantorAddress: [''],
       }),
-      deligenceStatus: [''],
+      deligenceReportStatus: [''],
       deligenceReport: this.fb.group({
         financialCheck: this.fb.group({
           cibilScore:[''],

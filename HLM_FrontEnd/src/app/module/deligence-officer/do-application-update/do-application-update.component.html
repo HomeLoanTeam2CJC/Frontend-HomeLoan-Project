@@ -2,77 +2,94 @@
     <h1 class="h">Customer Update Form</h1>
 <div class="container">
 
-  <form [formGroup]="customerForm">
-    <div>
-      <div class="form-group">
-        <label for="customerId">Customer ID</label>
-        <input type="number" disable class="form-control" id="customerId" placeholder="customerId" formControlName="customerId">
-    </div>
-    </div>
-  </form>
+    <div class="form-group col-md-12">
+     <button class="btn btn-danger btn-block btn-lg" disabled>Customer ID: {{existingCustomerId}}</button>
+  </div>
+
   
        
 
-    <form [formGroup]="deligenceReportForm" (ngSubmit)="updateDeligenceReport()">
+    <form [formGroup]="customerForm" (ngSubmit)="updateDeligenceReport()">
 
       
-        <div class="form-row">
+      <div formGroupName="deligenceReport">
+        <div class=""> 
           <div formGroupName="financialCheck">
-            <div class="form-group">
+            <div class="form-group col-md-6">
               <label for="cibilScore">Cibil Score</label>
               <input type="number" class="form-control" id="cibilScore" placeholder="cibilScore" formControlName="cibilScore">
           </div>  
-                <div class="form-group">
+                <div class="form-group col-md-6">
                   <label for="netIncome">Net Income</label>
                   <input type="text" class="form-control" id="netIncome" placeholder="netIncome" formControlName="netIncome">
               </div>
             
           </div>
+        </div>
           
-
+        <div class="">
             <div formGroupName="fieldInvestigation">
-                  <div class="form-group">
+                  <div class="form-group col-md-6">
                     <label>Field Investigation Details</label>
                       <label for="addressValidity">Address Validity</label>
                       <input type="text" class="form-control" id="addressValidity" placeholder="Address Validity" formControlName="addressValidity">
                   </div>
-                  <div class="form-group">
+                  <div class="form-group col-md-6">
                     <label for="contactDetailsValidity">Contact Details Validity</label>
                     <input type="text" class="form-control" id="contactDetailsValidity" placeholder="Contact Details Validity" formControlName="contactDetailsValidity">
                   </div>
-                  <div class="form-group">
+                  <div class="form-group col-md-6">
                     <label for="companyDetailsValidity">Company Details Validity</label>
                     <input type="text" class="form-control" id="companyDetailsValidity" placeholder="Company Details Validity" formControlName="companyDetailsValidity">
                   </div>
-                  <div class="form-group">
+                  <div class="form-group col-md-6">
                     <label for="propertyLegality">Property Legality</label>
                     <input type="text" class="form-control" id="propertyLegality" placeholder="Property Legality" formControlName="propertyLegality">
                   </div>
-                
-
             </div>
+
+          </div>
+
+          <div class="">
             <div formGroupName="technicalCheck">
-                <div class="form-group">
+                <div class="form-group col-md-6">
                   <label>Technical check</label>
                     <label for="propertyVisit">Property Visit</label>
                     <input type="text" class="form-control" id="propertyVisit" placeholder="Property Visit" formControlName="propertyVisit">
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-6">
                   <label for="propertyValuation">Property Valuation</label>
                   <input type="number" class="form-control" id="propertyValuation" placeholder="Property Valuation" formControlName="propertyValuation">
                 </div>
                
             </div>
+          </div>
+          
+      </div>
+      <div class="form-group col-md-6">
+        <label for="deligenceReportStatus">Deligence Report Status</label>
+        <input type="text" class="form-control" id="deligenceReportStatus" placeholder="deligenceReportStatus" formControlName="deligenceReportStatus">
+      </div>
+        
 
-  
+          <div class=""> 
+          
+            <!-- <div>
+              <button type="button" class="btn btn-success" (click)="statusApprove()">Approve</button>
+              <button type="button" class="btn btn-danger" (click)="statusReject()">Reject</button>
+            </div>
+            <div *ngIf="customerForm.deligenceReportStatus==null">
+              <button type="button" class="btn btn-warning" >Pending</button>
+            </div> -->
+
+            <!-- <div *ngIf="customerForm.deligenceReportStatus!=null">
+              <button type="button" class="btn btn-secondary" >{{customerForm.deligenceReportStatus}}</button>
+            </div> -->
+
               <button type="submit" class="btn btn-primary">Update</button> &nbsp;
               
-              <button routerLink="/login" class="btn btn-primary">Back to Login</button>
-            
-          
-      
-             
-        </div>
+              <button type="button" routerLink="/login" class="btn btn-primary">Back to Login</button>    
+          </div>
     </form>
 </div>
 </div>

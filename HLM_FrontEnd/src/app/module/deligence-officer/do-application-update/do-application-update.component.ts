@@ -13,45 +13,39 @@ export class DoApplicationUpdateComponent implements OnInit {
 
   constructor(private service: CustomerApplicationService, private fb: FormBuilder, private location: Location, private routes: ActivatedRoute) { }
 
-  deligenceReportForm: FormGroup
   existingCustomerId: any
-
   customerForm: FormGroup
 
   ngOnInit(): void {
-    this.customerForm = this.fb.group({
-      customerId: []
-    })
-    this.deligneceReportFields()
+    
+    this.customerFormFields()
     this.getCustomerState()
-
     
 
   }
 
-  deligneceReportFields(){
+  customerFormFields(){
 
     this.customerForm = this.fb.group({
-      
-    })
-    this.deligenceReportForm = this.fb.group({
+      deligenceReportStatus: [''],
+      deligenceReport: this.fb.group({
+        deligenceReportId: [],
+        financialCheck: this.fb.group({ 
+          cibilScore: [],
+          netIncome:[]
+        }),
+        fieldInvestigation: this.fb.group({
+          addressValidity:[''],
+          contactDetailsValidity:[''],
+          companyDetailsValidity:[''],
+          propertyLegality:['']
+        }),
+        technicalCheck: this.fb.group({
+          propertyVisit:[''],
+          propertyValuation:[ ]
+        }),
 
-      deligenceReportId: [],
-      financialCheck: this.fb.group({ 
-        cibilScore: [],
-        netIncome:[]
-      }),
-      fieldInvestigation: this.fb.group({
-        addressValidity:[''],
-        contactDetailsValidity:[''],
-        companyDetailsValidity:[''],
-        propertyLegality:['']
-      }),
-      technicalCheck: this.fb.group({
-        propertyVisit:[''],
-        propertyValuation:[ ]
-      }),
-
+      })
     })
   }
 
@@ -66,21 +60,25 @@ export class DoApplicationUpdateComponent implements OnInit {
       
     })
 
-    
+    // this.customerForm.get('customerId').setValue(this.existingCustomerId)
 
-    this.customerForm.get('customerId').setValue(this.existingCustomerId)
+    // let customer: any = this.location.getState()
 
-    let customer: any = this.location.getState()
-
-    console.log("deligenceReportId: "+customer.deligenceReport.deligenceReportId)
-
-    this.deligenceReportForm.get('deligenceReportId').setValue(customer.deligenceReport.deligenceReportId)
+    // console.log("deligenceReportId: "+customer.deligenceReport.deligenceReportId)
+    // this.customerForm.get('deligenceReport').get('deligenceReportId').setValue(customer.deligenceReport.deligenceReportId)
 
   }
 
 
 
-
+  // statusApprove(){
+  //   this.customerForm.get('deligenceReportStatus').setValue('Approved')
+  //   console.log(this.customerForm.get('deligenceReportStatus').value)
+  // }
+  // statusReject(){
+  //   this.customerForm.get('deligenceReportStatus').setValue('Rejected')
+  //   console.log(this.customerForm.get('deligenceReportStatus').value)
+  // }
 
 
   updateDeligenceReport()
@@ -88,19 +86,16 @@ export class DoApplicationUpdateComponent implements OnInit {
 
 
     alert("submitDeligenceReport() called")
-    alert(this.deligenceReportForm.get('financialCheck').get('cibilScore').value)
+    alert(this.customerForm.get('deligenceReport').get('financialCheck').get('cibilScore').value)
 
-    const deligenceFormJson = JSON.stringify(this.deligenceReportForm.value)
+    const customerFormJson = JSON.stringify(this.customerForm.value)
 
-    const deligenceFormData = new FormData
-    deligenceFormData.append('customerApplication', deligenceFormJson)
-
-
-    console.log(this.deligenceReportForm.controls['deligenceReportId'].value)
+    const customerFormData = new FormData
+    customerFormData.append('customerApplication', customerFormJson)
 
 
-
-    this.service.updateDeligenceReport(deligenceFormData, this.existingCustomerId).subscribe()
+    console.log('deligenceReportId: '+this.customerForm.get('deligenceReport').get('deligenceReportId').value)
+    this.service.updateDeligenceReport(customerFormData, this.existingCustomerId).subscribe()
     
   }
 }

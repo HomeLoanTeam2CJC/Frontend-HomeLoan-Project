@@ -33,7 +33,7 @@ export class Customer {
     accountDetails: AccountDetails;
     propertyInfo: PropertyInfo;
     gurantorDetails: GurantorDetails;
-    deligenceStatus: string;
+    deligenceReportStatus: string;
     deligenceReport: DeligenceReport;
     doReportBmResponseStatus: string;
     doReportBmResponse: string;
