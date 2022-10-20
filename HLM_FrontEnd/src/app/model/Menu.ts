@@ -3,7 +3,7 @@ export class Menu {
       {
 
         //Sales Executive Module
-        se:[{path: "schemes", title: "Schemes", icon: "pe-7s-graph", class: "" },
+        se:[{path: "schemes", title: "Schemes", icon: "fa fa-address-book", class: "" },
             {path: "application-details", title: "Application Details", icon: "pe-7s-graph", class: "" },
             {path: "loan-application-form", title: "Loan Application Form", icon: "pe-7s-graph", class: "" },
             {path: "loan-application-list", title: "Loan Application List", icon: "pe-7s-graph", class: "" },

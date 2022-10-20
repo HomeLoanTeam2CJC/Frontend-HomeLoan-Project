@@ -12,13 +12,13 @@ export interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
 
     //Sales Executive Module
-    { path: '/schemes',     title: 'Schemes',         icon:'nc-bank',       class: '' },
-    { path: '/enquiry-form',     title: 'Enquiry Form',         icon:'nc-bank',       class: '' },
-    { path: '/enquiry-list',     title: 'Enquiry List',         icon:'nc-bank',       class: '' },
-    { path: '/loan-application-form',     title: 'Loan Application Form',         icon:'nc-bank',       class: '' },
-    { path: '/loan-application-list',     title: 'Loan Application List',         icon:'nc-bank',       class: '' },
-    { path: '/application-details',     title: 'Application Details',         icon:'nc-bank',       class: '' },
-    { path: '/emi-calc',     title: 'EMI Calculator',         icon:'nc-bank',       class: '' },
+    { path: '/schemes',     title: 'Sales Executive : Schemes',         icon:'fa-solid fa-user',       class: '' },
+    { path: '/enquiry-form',     title: 'Sales Executive : Enquiry Form',         icon:'nc-bank',       class: '' },
+    { path: '/enquiry-list',     title: 'Sales Executive : Enquiry List',         icon:'nc-bank',       class: '' },
+    { path: '/loan-application-form',     title: 'Sales Executive : Loan Application Form',         icon:'nc-bank',       class: '' },
+    { path: '/loan-application-list',     title: 'Sales Executive : Loan Application List',         icon:'nc-bank',       class: '' },
+    { path: '/application-details',     title: 'Sales Executive : Application Details',         icon:'nc-bank',       class: '' },
+    { path: '/emi-calc',     title: 'Sales Executive : EMI Calculator',         icon:'nc-bank',       class: '' },
 
 
     //Deligence Officer Module

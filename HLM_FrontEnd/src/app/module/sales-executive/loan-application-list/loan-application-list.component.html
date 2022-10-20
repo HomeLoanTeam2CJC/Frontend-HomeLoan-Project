@@ -7,14 +7,15 @@
         <thead style="text-align: center;">
             <tr style="color: blue; background-color: darkgrey;">
                 <th>Customer Id</th>
-                <th>Customer Name</th>
-                <th>Customer Email</th>
-                <th>Customer Mobile No</th>
-                <th>Deligence Status</th>  
-                <th>Branch Manager Status</th>
-                <th>Customer Acceptance Status</th>
-                <th>Loan Agreement Status</th>
-                <th>Loan Disbursement Status</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile No</th>
+                <th>Deligence Report</th>   <!-- status  -->
+                <th>Branch Manager Response</th> <!-- status  -->
+                <th>Sanction Letter</th> <!-- status  -->
+                <th>Customer Acceptance</th> <!-- status  -->
+                <th>Loan Agreement</th> <!-- status  -->
+                <th>Loan Disbursement</th> <!-- status  -->
             </tr>
         </thead>
         <tbody>
@@ -23,12 +24,34 @@
                 <td>{{s.customerName}}</td>
                 <td>{{s.customerEmail}}</td>
                 <td>{{s.customerMobileNumber}}</td>
-                <td>{{s.deligenceStatus}}</td>
-                <td>{{s.doReportBmResponseStatus}}</td>
-                 <td>{{s.customerAcceptanceStatus}}</td>
-                <td>{{s.sanctionLetterStatus}}</td>
-                 <td>{{s.loanAgreementStatus}}</td>
-                  <td>{{s.loanDisbursementStatus}}</td>
+                <td>
+                    <button disabled>{{s.deligenceStatus}}</button>    
+                </td>
+                <div *ngIf="s.deligenceStatus">
+                    <td>
+                        <button disabled>{{s.doReportBmResponseStatus}}</button>  
+                    </td>
+                </div>
+                <td *ngIf="s.doReportBmResponseStatus">
+                    <div *ngIf="s.sanctionLetterStatus===null">
+                        <button>Generate</button>
+                    </div>
+                    <div *ngIf="s.sanctionLetterStatus!==null">
+                        <button>{{s.sanctionLetterStatus}}</button>
+                    </div>        
+                </td>
+                 <td>
+                    {{s.customerAcceptanceStatus}}
+                </td>
+                <td>
+                    {{s.sanctionLetterStatus}}
+                </td>
+                <td>
+                    {{s.loanAgreementStatus}}
+                </td>
+                <td>
+                    {{s.loanDisbursementStatus}}
+                </td>
             </tr>
         </tbody>
     </table>
