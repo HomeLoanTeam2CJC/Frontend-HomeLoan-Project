@@ -70,6 +70,10 @@ export class CustomerApplicationService {
     return this.http.post(this.step8Url+"postStep8/"+existingCustomerId,customerFormData)
   }
 
+  getCustomer(customerId: any){
+    return this.http.get(this.backendCustomerUrl+"getCustomer/"+customerId)
+  }
+
 
 
 }

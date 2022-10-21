@@ -18,7 +18,7 @@
             <button type="button" class="btn btn-warning" *ngIf="c.deligenceReportStatus==null">Pending</button>
         </td>
         <td>
-          <button type="button" class="btn btn-success" *ngIf="c.sanctionLetterStatus" [routerLink]="['view-sanction-letter', c.customerId]">{{c.sanctionLetterStatus}}</button> <!-- add routing to open sanction letter form -->
+          <button type="button" class="btn btn-success" *ngIf="c.sanctionLetterStatus" [routerLink]="['view-sanction-letter', c.customerId]" [state]="c">{{c.sanctionLetterStatus}}</button> <!-- add routing to open sanction letter form -->
             <button type="button" class="btn btn-warning" *ngIf="c.sanctionLetterStatus==null">Pending</button>
             
         </td>
