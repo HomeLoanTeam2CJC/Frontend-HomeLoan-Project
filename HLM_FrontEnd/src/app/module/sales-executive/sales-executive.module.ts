@@ -10,6 +10,7 @@ import { LoanApplicationListComponent } from './loan-application-list/loan-appli
 import { ApplicationDetailsComponent } from './application-details/application-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomerAcceptanceComponent } from './customer-acceptance/customer-acceptance.component';
+import { EmailPdfSanctionLetterComponent } from './email-pdf-sanction-letter/email-pdf-sanction-letter.component';
 
 const salesrouting: Routes = [
   {
@@ -29,6 +30,9 @@ const salesrouting: Routes = [
     children: [
       {
         path: 'customer-acceptance/:customerId', component: CustomerAcceptanceComponent
+      },
+      {
+        path: 'email-sanction/:customerId', component: EmailPdfSanctionLetterComponent
       }
     ]
   },
@@ -44,7 +48,7 @@ const salesrouting: Routes = [
 
 
 @NgModule({
-  declarations: [SchemesComponent, EnquiryFormComponent, EnquiryListComponent, EmiCalcComponent, LoanApplicationFormComponent, LoanApplicationListComponent, ApplicationDetailsComponent, CustomerAcceptanceComponent],
+  declarations: [SchemesComponent, EnquiryFormComponent, EnquiryListComponent, EmiCalcComponent, LoanApplicationFormComponent, LoanApplicationListComponent, ApplicationDetailsComponent, CustomerAcceptanceComponent, EmailPdfSanctionLetterComponent],
   imports: [
     CommonModule, RouterModule.forChild(salesrouting), ReactiveFormsModule, FormsModule
   ],

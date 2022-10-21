@@ -5,9 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CustomerApplicationService {
-  getCustomer(cId: number) {
-    throw new Error('Method not implemented.');
-  }
+  
 
   constructor(private http: HttpClient) { }
 
@@ -90,6 +88,11 @@ export class CustomerApplicationService {
 
   disbursementStatus(customerFormData: any, customerId: any){
     return this.http.post(this.step11Url+"postStep11/"+customerId, customerFormData)
+  }
+
+  sendEmail(emailFormData: any, existingCustomerId: any){
+
+    return this.http.post(this.backendCustomerUrl+"customerEmail/"+existingCustomerId, emailFormData)
   }
 
 
