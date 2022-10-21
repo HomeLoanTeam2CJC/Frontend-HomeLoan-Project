@@ -39,6 +39,9 @@ export const ROUTES: RouteInfo[] = [
     {
       path: '/loanagreementform',     title: 'Loan Agreement Form  For Deligence Officer',         icon:'nc-bank',       class: ''
     },
+    // {
+    //   path: '/view-details',        title: 'View Details For Deligence Officer',  icon:'nc-bank',       class: ''
+    // },
 
 
     //Operational Executive module

@@ -3,7 +3,7 @@
 	/* fallback for old browsers */
 	background: -webkit-linear-gradient(to bottom, #8eb4b9, #57f5ed);
 	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, #5fc1ce, #57a1f5);
+	background: linear-gradient(to bottom, #5fc1ce, yellow);
 	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	float: left;
 	width: 100%;
@@ -11,15 +11,17 @@
 }
 
 .banner-sec {
-	background: url(assets\images\login1mod.png) no-repeat left bottom;
-	background-size: cover;
+	background: url(assets\images\log2.jpg) no-repeat left center;
+	background-size: auto;
+	backface-visibility: hidden;
+	background-repeat: no-repeat;
 	min-height: 500px;
 	border-radius: 0 10px 10px 0;
 	padding: 0;
 }
 
 .container {
-	background: #fff;
+	background: #2974d4;
 	border-radius: 10px;
 	box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.1);
 }
@@ -36,6 +38,7 @@
 .login-sec {
 	padding: 50px 30px;
 	position: relative;
+	color: #DE6262;
 }
 
 .login-sec .copy-text {
@@ -58,7 +61,7 @@
 	margin-bottom: 30px;
 	font-weight: 800;
 	font-size: 30px;
-	color: #2974d4;
+	color: #FFF;
 }
 
 .login-sec h2:after {

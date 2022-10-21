@@ -1,27 +1,28 @@
 <section class="login-block">
   <div class="container">
 <div class="row">
-  <div class="col-md-8 login-sec">
+  <div class="col-md-6 login-sec">
       <h2 class="text-center">Login Now</h2>
       <form class="login-form">
 <div class="form-group">
-  <label for="exampleInputEmail1" class="text-uppercase">Username</label>
+  <label for="exampleInputEmail1" class="text-uppercase" ><i class='fa fa-user'></i></label>
   <input type="text" name="username" id="user" class="form-control" placeholder="Username" [(ngModel)]=u.username>
 </div>
 <div class="form-group">
-  <label for="exampleInputPassword1" class="text-uppercase">Password</label>
+  <label for="exampleInputPassword1" class="text-uppercase">
+    <i class='fa fa-lock'></i></label>
    <input type="password" name="password" id="password" class="form-control" placeholder="Password" [(ngModel)]=u.password>
 </div>
 
 
   <div class="form-check">
-  <button type="submit" class="btn btn-login float-right"(click)="login(u)">Submit</button>
+  <button type="submit" class="btn btn-info float-right"(click)="login(u)">LOGIN</button>
 </div>
 
 </form>
 
   </div>
-  <div class="col-md-4 banner-sec">
+  <div class="col-md-6 banner-sec">
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                <ol class="carousel-indicators">
                   <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -29,10 +30,10 @@
                 </ol>
           <div class="carousel-inner" role="listbox">
   <div class="carousel-item active">
-    <img class="d-block img-fluid" src="assets\img\loginphoto.jpg" alt="First slide">
+    <!-- <img class="d-block img-fluid" src="assets\images\login.jpg" alt="First slide"> -->
     <div class="carousel-caption d-none d-md-block">
       <div class="banner-text">
-          <h2>Secure Login</h2>
+          <!-- <h2>Secure Login</h2> -->
           </div>	
 </div>
   </div>

@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  myimage:String="assets/images/HomeloanImages1.webp";
+  myimage:String="/assets/images/hl5.jpg";
   
   log()
   {

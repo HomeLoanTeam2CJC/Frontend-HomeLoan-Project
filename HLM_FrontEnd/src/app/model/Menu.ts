@@ -40,7 +40,10 @@ export class Menu {
         },
         {
           path: 'loanagreementform', title: "Loan Agreement Form", icon: "pe-7s-graph", class: "" 
-        }
+        },
+        // {
+        //   path: 'view-details', title: "View Details", icon: "pe-7s-graph", class: "" 
+        // }
       
       ],
 
