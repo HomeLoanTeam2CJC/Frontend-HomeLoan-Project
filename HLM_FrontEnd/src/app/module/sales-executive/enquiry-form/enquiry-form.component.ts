@@ -50,46 +50,7 @@ export class EnquiryFormComponent implements OnInit {
 
     })
 
-    // this.enquiryFormFields()
   }
-
-  // enquiryFormFields(){
-  //   alert("enquiryFormFields method called")
-
-  //   this.enquiryForm = this.fb.group({
-
-  //     enquiryId: [],
-  //     firstName: [''],
-  //     lastName: [''],
-  //     dateOfBirth: [''],
-  //     gender: [''],
-  //     email:[''],
-  //     mobileNo: [],
-  //     panno: [''],
-  //     occupation: [''],
-  //     address: this.fb.group({
-  //         addressId: [],
-  //         houseNumber: [],
-  //         streetName: [''],
-  //         areaName: [''],
-  //         cityName: [''],
-  //         district: [''],
-  //         state: [''],
-  //         pincode: [],
-  //     }),
-  //     
-  //     loanPurpose: [''],
-  //     nearestBranch:[''],
-  //     // cibilDetails: this.fb.group({
-  //     //     cibilId: [],
-  //     //     cibilScore: [''],
-  //     //     cibilScoreDateTime: [''],
-  //     //     status: [''],
-  //     //     remarksByOe: ['']
-  //     // })
-
-  //   })
-  // }
 
   reader= new FileReader()
   pancardImg: any

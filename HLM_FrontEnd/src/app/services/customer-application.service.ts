@@ -21,7 +21,10 @@ export class CustomerApplicationService {
   step6Url: string = 'http://localhost:9090/step6Api/'
   step7Url: string = 'http://localhost:9090/step7Api/'
   step8Url: string = 'http://localhost:9090/step8Api/'
-  // 
+  step9Url: string = 'http://localhost:9090/step9Api/'
+  step10Url: string = 'http://localhost:9090/step10Api/'
+  step11Url: string = ''
+
   
 
   saveCutomerApplication(customerApplication : any){
@@ -72,6 +75,18 @@ export class CustomerApplicationService {
 
   getCustomer(customerId: any){
     return this.http.get(this.backendCustomerUrl+"getCustomer/"+customerId)
+  }
+
+  branchManagerFinalApproval(customerFormData: any, customerId: any){
+    return this.http.post(this.step9Url+"postStep9/"+customerId, customerFormData)
+  }
+
+  loanDisbursement(customerFormData: any, customerId: any){
+    return this.http.post(this.step10Url+"postStep10/"+customerId, customerFormData)
+  }
+
+  disbursementStatus(customerFormData: any, customerId: any){
+    return this.http.post(this.step11Url+"postStep11/"+customerId, customerFormData)
   }
 
 

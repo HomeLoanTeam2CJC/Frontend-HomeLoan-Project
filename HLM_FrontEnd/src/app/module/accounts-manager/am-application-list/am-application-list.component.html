@@ -5,33 +5,130 @@
             <thead style="text-align: center;">
                 <tr style="color: blue; background-color: darkgrey;">
                     <th>Customer Id</th>
-                    <th>Customer Name</th>
-                    <th>Customer Email</th>
-                    <th>Customer Mobile No</th>
-                    <th>Deligence Status</th>  
-                    <th>Branch Manager Status</th>
-                    <th>Customer Acceptance Status</th>
-                    <th>Loan Agreement Status</th>
-                    <th>Loan Disbursement Status</th>
+                    <th>Name</th>
+                    <th>BM Final Approval</th>
+                    <th>Disbursement Form</th>
+                    <th>Disbursement Status</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let s of customerList">
                     <td>{{s.customerId}}</td>
                     <td>{{s.customerName}}</td>
-                    <td>{{s.customerEmail}}</td>
-                    <td>{{s.customerMobileNumber}}</td>
-                    <td>{{s.deligenceStatus}}</td>
-                    <td>{{s.doReportBmResponseStatus}}</td>
-                     <td>{{s.customerAcceptanceStatus}}</td>
-                    <td>{{s.sanctionLetterStatus}}</td>
-                     <td>{{s.loanAgreementStatus}}</td>
-                      <td>{{s.loanDisbursementStatus}}</td>
+                    <td>
+                        <button type="button" class="btn btn-success" *ngIf="s.loanAgreementBmSignStatus" >{{s.loanAgreementBmSignStatus}}</button>
+                        <button type="button" class="btn btn-warning" *ngIf="s.loanAgreementBmSignStatus==null">Pending</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary" (click)="openForm(s.customerId)">Disbursement Form</button>
+                    </td>
+                      <td>
+                        <button type="button" class="btn btn-primary" *ngIf="s.loanDisbursementStatus=='In Progress'" (click)="changeStatus(s)">In Progress</button>
+                        <button type="button" class="btn btn-success" *ngIf="s.loanDisbursementStatus=='Started'" (click)="changeStatus(s)">Started</button>
+                        <button type="button" class="btn btn-danger" *ngIf="s.loanDisbursementStatus=='Halted'" (click)="changeStatus(s)">Halted</button>
+                        <button type="button" class="btn btn-info" *ngIf="s.loanDisbursementStatus=='Completed'" (click)="changeStatus(s)">Completed</button>
+                        <button type="button" class="btn btn-warning" *ngIf="s.loanDisbursementStatus==null" (click)="changeStatus(s)">Pending</button>
+                      </td>
                 </tr>
             </tbody>
         </table>
         <!-- <button class="btn-info" type="submit" (click)="goback()" style="margin-left: 600px;">Back</button> -->
     </div>
+    </div>
+
+    
+
+    <div *ngIf="disbForm === 'open'">
+
+        <div class="form-group col-md-12">
+            <button class="btn btn-danger btn-block btn-lg" disabled>Loan Disbursement Form for Customer ID: {{customerId}}</button>
+         </div>
+
+
+        <form [formGroup]="customerForm" >
+
+            <div class="form-row" formGroupName="loanDisbursement">
+              <div class="col-md-6">
+                
+                  <div class="form-group">
+                      <label for="loanNumber">Loan Number</label>
+                      <input type="number" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Enter Loan Number" formControlName="loanNumber">
+                      <small id="nameHelp" class="form-text text-muted">Enter Loan Number
+                      </small>
+                  </div>
+                  <div class="form-group">
+                    <label for="amountPayType">Amount Pay Type</label>
+                    <input type="text" class="form-control" id="exampleInputDob" aria-describedby="dobHelp" placeholder="Enter Amount Pay Type" formControlName="amountPayType">
+                    <small id="dobHelp" class="form-text text-muted">Enter Amount Pay Type</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="bankName">Bank Name</label>
+                    <input type="text" class="form-control" id="exampleInputDob" aria-describedby="dobHelp" placeholder="Enter Bank Name" formControlName="bankName">
+                    <small id="dobHelp" class="form-text text-muted">Bank Name</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="ifscCode">Bank IFSC Code</label>
+                    <input type="text" class="form-control" id="exampleInputDob" aria-describedby="dobHelp" placeholder="Enter ifsc Code" formControlName="ifscCode">
+                    <small id="dobHelp" class="form-text text-muted">IFSC Code</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="transferAmount">Transfer Amount</label>
+                    <input type="number" class="form-control" id="exampleInputDob" aria-describedby="dobHelp" placeholder="Enter Transfer Amount" formControlName="transferAmount">
+                    <small id="dobHelp" class="form-text text-muted">Transfer Amount</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="amountPaidDate">Date Of Payment</label>
+                    <input type="text" class="form-control" id="exampleInputDob" aria-describedby="dobHelp" placeholder="Enter Date Of Payment" formControlName="amountPaidDate">
+                    <small id="dobHelp" class="form-text text-muted">Date Of Payment</small>
+                  </div>
+    
+                  <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
+                  <button class="btn btn-primary" (click)="reset()">Clear</button>
+                </div>
+    
+             
+          
+              <div class="col-md-6">
+                <div class="form-group">
+                    <label for="agreementDate">Loan Agreement Date</label>
+                    <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Enter Loan Aagreement Date" formControlName="agreementDate">
+                    <small id="nameHelp" class="form-text text-muted">Enter Loan Agreement Date
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="totalLoanAmount">Loan Amount</label>
+                    <input type="number" class="form-control" id="gender" aria-describedby="nameHelp" placeholder="Enter Total Amount" formControlName="totalLoanAmount">
+                    <small id="nameHelp" class="form-text text-muted">total loan amount
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="accountNumber">Bank  Account Number</label>
+                    <input type="number" class="form-control" id="gender" aria-describedby="nameHelp" placeholder="Enter Account Number" formControlName="accountNumber">
+                    <small id="nameHelp" class="form-text text-muted">Bank  Account Number
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="accountType">Bank  Account Type</label>
+                    <input type="text" class="form-control" id="gender" aria-describedby="nameHelp" placeholder="Enter Account Type" formControlName="accountType">
+                    <small id="nameHelp" class="form-text text-muted">Bank  Account Type
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="paymentStatus">Payment Status</label>
+                    <input type="text" class="form-control" id="gender" aria-describedby="nameHelp" placeholder="Enter Payment Status" formControlName="paymentStatus">
+                    <small id="nameHelp" class="form-text text-muted">Payment Status
+                    </small>
+                </div>
+            
+              </div>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-warning" (click)="submitCustomerForm()">
+                    Submit</button>
+                
+            </div>
+        </form>
     </div>
     
     

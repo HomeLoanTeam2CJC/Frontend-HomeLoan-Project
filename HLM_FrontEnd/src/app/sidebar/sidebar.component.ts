@@ -59,6 +59,10 @@ export const ROUTES: RouteInfo[] = [
     {
       path: '/view-sanction-letter' , title: "View Sanction Letter  For Branch Manager", icon: "pe-7s-graph", class: ""
     },
+    {
+      path: '/view-loan-agreement' , title: "view Loan Agreement  For Branch Manager", icon: "pe-7s-graph", class: ""
+    },
+    
 
     //Accounts Manager Module
     {
@@ -67,15 +71,15 @@ export const ROUTES: RouteInfo[] = [
       {
         path: '/disbursement-form', title: "Disbursement Form", icon: "pe-7s-graph", class: ""
       },
-    {
-      path: '/ledger-total-list', title: "Ledger Total List", icon: "pe-7s-graph", class: ""
-    },
-    {
-      path: '/ledger-defaulter-list', title: "Ledger Defaulter List", icon: "pe-7s-graph", class: ""
-    },
-    {
-      path: '/ledger-form', title: "Ledger Form", icon: "pe-7s-graph", class: ""
-    },
+      {
+        path: '/ledger-total-list', title: "Ledger Total List", icon: "pe-7s-graph", class: ""
+      },
+      {
+        path: '/ledger-defaulter-list', title: "Ledger Defaulter List", icon: "pe-7s-graph", class: ""
+      },
+      {
+        path: '/ledger-form', title: "Ledger Form", icon: "pe-7s-graph", class: ""
+      },
 
     //Telecom Module
     {

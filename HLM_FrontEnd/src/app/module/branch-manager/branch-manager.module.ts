@@ -5,6 +5,7 @@ import { BmApplicationUpdateComponent } from './bm-application-update/bm-applica
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewSanctionLetterComponent } from './view-sanction-letter/view-sanction-letter.component';
+import { ViewLoanAgreementComponent } from './view-loan-agreement/view-loan-agreement.component';
 
 
 const bmroutes: Routes = [
@@ -16,19 +17,22 @@ const bmroutes: Routes = [
     },
     {
       path: 'view-sanction-letter/:customerId', component: ViewSanctionLetterComponent
+    },
+    {
+      path: 'view-loan-agreement/:customerId', component: ViewLoanAgreementComponent
     }
   ]
 }
 ]
 
 @NgModule({
-  declarations: [BmApplicationListComponent, BmApplicationUpdateComponent, ViewSanctionLetterComponent],
+  declarations: [BmApplicationListComponent, BmApplicationUpdateComponent, ViewSanctionLetterComponent, ViewLoanAgreementComponent],
   imports: [
     CommonModule, RouterModule.forChild(bmroutes), ReactiveFormsModule, FormsModule
     
   ],
   exports: [
-    BmApplicationListComponent, BmApplicationUpdateComponent, ViewSanctionLetterComponent
+    BmApplicationListComponent, BmApplicationUpdateComponent, ViewSanctionLetterComponent, ViewLoanAgreementComponent
   ]
 })
 export class BranchManagerModule { }
