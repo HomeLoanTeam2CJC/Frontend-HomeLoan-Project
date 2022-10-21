@@ -1,0 +1,97 @@
+<div class="overall">
+    <h2 class="h">Loan Agreement</h2>
+    <h2 class="h">{{customer.loanAgreement.loanAgreementName}}</h2>
+    <div class="container">
+        
+        <div class="form-group col-md-12">
+        <button class="btn btn-danger btn-block btn-lg">Customer ID: {{customerId}}</button>
+        </div>
+
+
+        <form>
+            <div class="form-row">
+              <div class="col-md-6">
+                
+                <div>
+    
+                   <div class="form-group">
+                      <label for="loanAgreementName">Loan Agreement Name</label>
+                      <input type="text" class="form-control" id="loanAgreementName" aria-describedby="nameHelp" value="{{customer.loanAgreement.loanAgreementName}}">
+                      
+                  </div>
+                  <div class="form-group">
+                    <label for="contactDetails">Contact Details</label>
+                    <input type="number" class="form-control" id="contactDetails" aria-describedby="dobHelp" value="{{customer.loanAgreement.contactDetails}}">
+                    
+                  </div>
+                  <div class="form-group">
+                    <label for="interestType">Interest Type</label>
+                    <input type="text"  class="form-control" id="interestType" aria-describedby="dobHelp" value="{{customer.loanAgreement.interestType}}" >
+                   
+                  </div>
+                  <div class="form-group">
+                    <label for="loanTenure">Loan Tenure</label>
+                    <input type="number" class="form-control" id="loanTenure" aria-describedby="dobHelp" value="{{customer.loanAgreement.loanTenure}}">
+                   
+                  </div>
+                  <div class="form-group">
+                    <label for="modeOfPayment">Mode Of Payment</label>
+                    <input type="text" class="form-control" id="modeOfPayment" aria-describedby="dobHelp" value="{{customer.loanAgreement.modeOfPayment}}">
+                    
+                  </div>
+                  <div class="form-group">
+                    <label for="status">Status</label>
+                    <input type="text" class="form-control" id="status" aria-describedby="dobHelp" value="{{customer.loanAgreement.status}}" >
+                  
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="applicantName">Applicant Name</label>
+                        <input type="text" class="form-control" id="applicantName" aria-describedby="nameHelp" value="{{customer.loanAgreement.applicantName}}">
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="loanAmountSanctioned">Loan Amount Sanctioned</label>
+                        <input type="number" class="form-control" id="loanAmountSanctioned" aria-describedby="nameHelp" value="{{customer.loanAgreement.loanAmountSanctioned}}">
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="rateOfInterest">Rate Of Interest</label>
+                        <input type="number" class="form-control" id="rateOfInterest" aria-describedby="nameHelp" value="{{customer.loanAgreement.rateOfInterest}}">
+                       
+                    </div>
+                    <div class="form-group">
+                        <label for="monthlyEmiAmount">Monthly Emi Amount</label>
+                        <input type="number" class="form-control" id="monthlyEmiAmount" aria-describedby="nameHelp" value="{{customer.loanAgreement.monthlyEmiAmount}}">
+                       
+                    </div>
+                    <div class="form-group">
+                        <label for="Remarks">remarks</label>
+                        <input type="text" class="form-control" id="remarks" aria-describedby="nameHelp" value="{{customer.loanAgreement.remarks}}">
+                        
+                    </div>
+                   
+                  </div>
+                </div>
+                
+                <div>
+                    <button type="submit" class="btn btn-success col-md-3" (click)="approve()">Approve</button> &nbsp; &nbsp;
+                    <button class="btn btn-danger col-md-3" (click)="reject()">Reject</button>
+                </div>
+                  
+                </div>
+    
+    
+             
+            </div>
+        </form>
+
+
+
+
+
+
+
+
+    </div>
+</div>

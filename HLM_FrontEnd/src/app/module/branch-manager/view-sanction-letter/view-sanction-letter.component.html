@@ -1,1 +1,69 @@
-<p>view-sanction-letter works!</p>
+<div class="overall">
+    <h2 class="h">Sanction Letter</h2>
+    <h2 class="h">{{customerData.sanctionLetter.applicantName}}</h2>
+    <div class="container">
+        
+      <div class="form-group col-md-12">
+        <button class="btn btn-danger btn-block btn-lg" disabled>Customer ID: {{customerId}}</button>
+     </div>
+
+    <form >
+      <div>
+        <div class="form-row">
+          <div class="col-md-6">
+            
+              <div class="form-group">
+                  <label for="sanctionDate">Sanction Date</label>
+                  <input type="text" class="form-control" id="sanctionDate" aria-describedby="nameHelp" value="{{customerData.sanctionLetter.sanctionDate}}">
+                 
+              </div>
+              <div class="form-group">
+                <label for="contactDetails">Contact Details</label>
+                <input type="number" class="form-control" id="contactDetails" aria-describedby="dobHelp" value="{{customerData.sanctionLetter.contactDetails}}">
+               
+              </div>
+              <div class="form-group">
+                <label for="maxEmi">Max Emi</label>
+                <input type="number" class="form-control" id="maxEmi" aria-describedby="dobHelp" value="{{customerData.sanctionLetter.maxEmi}}">
+                
+              </div>
+              <div class="form-group">
+                <label for="validity">Validity</label>
+                <input type="number" class="form-control" id="validity" aria-describedby="dobHelp" value="{{customerData.sanctionLetter.validity}}">
+                
+              </div>
+              
+
+              
+            </div>
+
+         
+      
+          <div class="col-md-6">
+            <div class="form-group">
+                <label for="applicantName">Applicant Name</label>
+                <input type="text" class="form-control" id="applicantName" aria-describedby="nameHelp" value="{{customerData.sanctionLetter.applicantName}}">
+               
+            </div>
+            <div class="form-group">
+                <label for="maxSanctionAmount">Max Sanction Amount</label>
+                <input type="number" class="form-control" id="maxSanctionAmount" aria-describedby="nameHelp" value="{{customerData.sanctionLetter.maxSanctionAmount}}">
+                
+            </div>
+            <div class="form-group">
+                <label for="averageTenure">Average Tenure</label>
+                <input type="number" class="form-control" id="averageTenure" aria-describedby="nameHelp" value="{{customerData.sanctionLetter.averageTenure}}">
+                
+            </div>
+            
+        
+          </div>
+        </div>
+
+      </div>
+      <div>
+        
+      </div>
+    </form>
+    </div>
+</div>

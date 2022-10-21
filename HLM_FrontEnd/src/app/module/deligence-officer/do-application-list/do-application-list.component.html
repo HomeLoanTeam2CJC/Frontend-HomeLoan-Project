@@ -4,9 +4,10 @@
       <tr>
         <th scope="col">Customer ID</th>
         <th scope="col">Customer Name</th>
-        <th scope="col">PAN Number</th>
+        <th scope="col">Details</th>
         <th>Deligence Status</th>
         <th>Sanction Letter</th>
+        <th>Customer Acceptance</th>
         <th>Loan Agreement</th>
         <!-- <th scope="col">Action</th> -->
       </tr>
@@ -15,31 +16,44 @@
       <tr *ngFor="let c of customerList">
         <th scope="row">{{c.customerId}}</th>
         <td>{{c.customerName}}</td>
-        <td>{{c.pan}}</td>
-      
         <td>
-          <button type="button" class="btn btn-success" *ngIf="c.deligenceReportStatus" [routerLink]="['do-application-update', c.customerId]" [state]="c" >{{c.deligenceReportStatus}}</button>
-          <button type="button" class="btn btn-warning" *ngIf="c.deligenceReportStatus==null" [routerLink]="['do-application-update', c.customerId]">Pending</button>
+          <button class="btn btn-primary">Details</button>
         </td>
         <td>
-          <button type="button" class="btn btn-success" *ngIf="c.sanctionLetterStatus"
-              [routerLink]="['sanction-letter-form', c.customerId]" [state]="c">{{c.sanctionLetterStatus}}
-          </button>
-          <button type="button" class="btn btn-warning" *ngIf="c.sanctionLetterStatus==null"
-              [routerLink]="['sanction-letter-form', c.customerId]" [state]="c">Pending
-          </button>
+          <div>
+            <button type="button" class="btn btn-success" *ngIf="c.deligenceReportStatus!==null"   [routerLink]="['do-application-update', c.customerId]" [state]="c" >{{c.  deligenceReportStatus}}  
+            </button>
+            <button type="button" class="btn btn-warning" *ngIf="c.deligenceReportStatus==null" [routerLink]="['do-application-update', c.customerId]">Pending</button>
+          </div>   
         </td>
         <td>
-          <button type="button" class="btn btn-success" *ngIf="c.loanAgreementStatus"
-              [routerLink]="['loanagreementform', c.customerId]" [state]="c">{{c.loanAgreementStatus}}
-          </button>
-          <button type="button" class="btn btn-warning" *ngIf="c.loanAgreementStatus==null"
-              [routerLink]="['loanagreementform', c.customerId]" [state]="c">Pending
-          </button>
+          <div *ngIf="c.deligenceReportStatus">
+            <button type="button" class="btn btn-success" *ngIf="c.sanctionLetterStatus"
+                [routerLink]="['sanction-letter-form', c.customerId]" [state]="c">{{c.sanctionLetterStatus}}
+            </button>
+            <button type="button" class="btn btn-warning" *ngIf="c.sanctionLetterStatus==null"
+                [routerLink]="['sanction-letter-form', c.customerId]" [state]="c">Pending
+            </button>
+          </div>  
         </td>
-        
-
-        <!-- <td><button class="btn btn-primary" [routerLink]="['do-application-update', c.customerId]" [state]="c">Update</button></td> -->
+            <div *ngIf="c.sanctionLetterStatus">
+              <button type="button" class="btn btn-success" *ngIf="c.customerAcceptanceStatus!=null">
+                  {{c.customerAcceptanceStatus}}
+              </button>
+              <button type="button" class="btn btn-warning" *ngIf="c.customerAcceptanceStatus==null">Pending
+              </button>
+          </div>
+        <td>
+          <div *ngIf="c.customerAcceptanceStatus">
+            <button type="button" class="btn btn-success" *ngIf="c.loanAgreementStatus"
+                [routerLink]="['loanagreementform', c.customerId]" [state]="c">{{c.loanAgreementStatus}}
+            </button>
+            <button type="button" class="btn btn-warning" *ngIf="c.loanAgreementStatus==null"
+                [routerLink]="['loanagreementform', c.customerId]" [state]="c">Pending
+            </button>
+          </div>
+          
+        </td>
       </tr>
       
     </tbody>

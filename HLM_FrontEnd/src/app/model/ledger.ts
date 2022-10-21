@@ -14,5 +14,5 @@ export class Ledger {
     currentMonthEmiStatus:string;
     loanEndDate:string;
     loanStatus:string;
-    defaulterStatus:string;  //changed  boolean to string
+    defaulterStatus: boolean;  //changed  boolean to string
 }

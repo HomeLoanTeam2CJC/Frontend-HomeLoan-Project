@@ -22,4 +22,6 @@ export class BmApplicationListComponent implements OnInit {
 
   }
 
+  
+
 }

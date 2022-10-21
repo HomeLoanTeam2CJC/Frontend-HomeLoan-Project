@@ -297,8 +297,9 @@ export class LoanApplicationFormComponent implements OnInit {
   
   
 
-  directNextStep(enteredCustomerId: any){
-    this.enteredCustomerId = enteredCustomerId
+  directNextStep(){
+    // this.enteredCustomerId = enteredCustomerId
+    alert(' Entered customerId: '+this.enteredCustomerId)
     this.step = this.step+1
   }
 
