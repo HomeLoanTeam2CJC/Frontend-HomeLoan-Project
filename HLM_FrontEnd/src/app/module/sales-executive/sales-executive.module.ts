@@ -33,12 +33,13 @@ const salesrouting: Routes = [
       },
       {
         path: 'email-sanction/:customerId', component: EmailPdfSanctionLetterComponent
+      },
+      {
+        path: 'application-details/:customerId', component: ApplicationDetailsComponent
       }
     ]
   },
-  {
-    path: 'application-details', component: ApplicationDetailsComponent
-  },
+  
   {
     path: 'emi-calc', component: EmiCalcComponent
   }
