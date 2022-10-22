@@ -1,0 +1,40 @@
+<div class="overall">
+    <h2 class="h">Sanction Letter</h2>
+    <div class="container">
+        
+      <div class="form-group col-md-12">
+        <button class="btn btn-danger btn-block btn-lg" disabled>Customer ID: {{existingCustomerId}}</button>
+     </div>
+
+
+
+     <!-- for pdf generation and downloading -->
+                <div >
+                    <button class="btn btn-info">Download Pdf</button>
+
+    <!-- Email sending form -->
+                </div >
+                <form [formGroup]="emailForm" (ngSubmit)="sendEmail()">
+                    <div class="form-group col-md-6">
+                        <label for="subject">Subject</label>
+                        <input type="text" class="form-control" id="subject" placeholder="subject" formControlName="subject">
+                    </div> 
+                    <div class="form-group col-md-6">
+                        <label for="textBody">Message</label>
+                        <textarea id="textBody" name="textBody" rows="4" cols="50"  formControlName="textBody">
+                        </textarea>
+                    </div>
+                    <div>
+                        <label>Attachment</label> &nbsp;
+                        <input type="file" (change)="onSelectingAttachment($event)">
+                    </div>
+
+                    <div>
+                        <button class="btn btn-primary" type="submit">Send</button>
+                    </div>
+
+
+                </form>
+
+    </div>
+</div>

@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class CustomerApplicationService {
   
+
   constructor(private http: HttpClient) { }
 
 
@@ -87,6 +88,11 @@ export class CustomerApplicationService {
 
   disbursementStatus(customerFormData: any, customerId: any){
     return this.http.post(this.step11Url+"postStep11/"+customerId, customerFormData)
+  }
+
+  sendEmail(emailFormData: any, existingCustomerId: any){
+
+    return this.http.post(this.backendCustomerUrl+"customerEmail/"+existingCustomerId, emailFormData)
   }
 
 

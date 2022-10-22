@@ -33,7 +33,8 @@
                 </td>
                 <td>
                     <div *ngIf="s.deligenceReportStatus">
-                        <button type="button" class="btn btn-success" *ngIf="s.sanctionLetterStatus">{{s.sanctionLetterStatus}}
+                        <button type="button" class="btn btn-success" *ngIf="s.sanctionLetterStatus"
+                        [routerLink]="['email-sanction', s.customerId]" >{{s.sanctionLetterStatus}}
                         </button>
                         <button type="button" class="btn btn-warning" *ngIf="s.sanctionLetterStatus==null">Pending
                         </button>
