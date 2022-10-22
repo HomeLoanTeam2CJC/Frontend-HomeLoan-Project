@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Customer } from 'app/model/customer';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -77,6 +79,7 @@ export class CustomerApplicationService {
   getCustomer(customerId: any){
     return this.http.get(this.backendCustomerUrl+"getCustomer/"+customerId)
   }
+
 
   branchManagerFinalApproval(customerFormData: any, customerId: any){
     return this.http.post(this.step9Url+"postStep9/"+customerId, customerFormData)
