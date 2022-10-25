@@ -1,15 +1,13 @@
 <!-- <p>view-details works!</p> -->
 
     <!-- <small><img [src]="imageSrc1" height="50"></small> -->
-<form [formGroup]="viewForm" ngSubmit="OnSubmit()"></form>
     <!-- Basic Information Form -->
     <!-- <div *ngIf="step==1"> -->
         <!-- <h6 class="text-center">Basic information</h6><br> -->
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="inputFirstName">Name</label>
-                <input type="text" class="form-control" name="customerfirstname" id="inputFirstName"
-                    placeholder="Name" formControlName="customerName">
+                <input type="text" class="form-control" name="customerfirstname" id="inputFirstName">
             </div>
             
         </div>
@@ -18,16 +16,14 @@
                 <div>
                     <label for="inputcustomerdob">Date Of Birth</label>
                     <!-- use type=date -->use type=date
-                    <input type="text" class="form-control" name="customerdob" id="inputcustomerdob"
-                        placeholder="Date Of Birth" formControlName="customerDateOfBirth">
+                    <input type="text" class="form-control" name="customerdob" id="inputcustomerdob">
                 </div>
             </div>
             <div class="form-group col-md-6">
                 <div>
                     <label for="inputcustomerdob">Age</label>
                     <!-- Logic for age calculation from dob -->
-                    <input type="number" class="form-control" name="customerdob" id="inputcustomerdob"
-                        placeholder="age" formControlName="customerAge">
+                    <input type="number" class="form-control" name="customerdob" id="inputcustomerdob">
                 </div>
             </div>
             <div class="form-group col-md-6">
