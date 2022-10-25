@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Customer } from 'app/model/customer';
 import { CustomerApplicationService } from 'app/services/customer-application.service';
+import html2canvas from 'html2canvas';
+import { data } from 'jquery';
+import jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-email-pdf-sanction-letter',
@@ -10,12 +14,8 @@ import { CustomerApplicationService } from 'app/services/customer-application.se
 })
 export class EmailPdfSanctionLetterComponent implements OnInit {
 
-
-
-  
-
   constructor(private service: CustomerApplicationService, private fb: FormBuilder, private routes: ActivatedRoute) { }
-
+  customer:Customer
   attachment: any
   emailForm: FormGroup
   existingCustomerId: any
@@ -26,10 +26,14 @@ export class EmailPdfSanctionLetterComponent implements OnInit {
       subject: [''],
       textBody: ['']
     })
-
     this.getState()
-
-
+    this.service.getCustomer(this.existingCustomerId).subscribe((data:Customer)=>{
+      this.customer = data;
+      alert(this.customer.sanctionLetter.maxSanctionAmount)
+      alert(this.customer.sanctionLetter.sanctionDate)
+    })
+   
+   
   }
 
   getState(){
@@ -49,6 +53,20 @@ export class EmailPdfSanctionLetterComponent implements OnInit {
   onSelectingAttachment(event){
 
     this.attachment = event.target.files[0]
+  }
+
+  generatePDF(){
+   
+    var data:any=document.getElementById("SanctionLetterPDF");
+
+    html2canvas(data).then((canvas) => {
+      let fileWidth = 208;
+      let fileHeight = (canvas.height * fileWidth) / canvas.width;
+      const FILEURI = canvas.toDataURL('image/png');
+      let PDF = new jsPDF('p', 'mm', 'a4');
+      PDF.addImage(FILEURI, 'PNG', 0, 0, fileWidth, fileHeight);
+      PDF.save('angular-demo.pdf');
+    });
   }
 
   sendEmail(){

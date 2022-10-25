@@ -1,1 +1,475 @@
-<p>application-details works!</p>
+<!-- <p>view-details works!</p> -->
+
+  
+   
+    <div *ngIf="step==1"> 
+        <h6 class="text-center">Basic information</h6><br>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputFirstName">Name</label>
+                <input type="text" class="form-control" name="customerfirstname" id="inputFirstName"
+                 value="{{customer.customerName}}"   placeholder="Name" >
+            </div>
+            
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <div>
+                    <label for="inputcustomerdob">Date Of Birth</label>
+                    
+                    <input type="text" class="form-control" name="customerdob" id="inputcustomerdob"
+                    value="{{customer.customerDateOfBirth}}"   placeholder="Date Of Birth" >
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div>
+                    <label for="inputcustomerdob">Age</label>
+                    <!-- Logic for age calculation from dob -->
+                    <input type="number" class="form-control" name="customerdob" id="inputcustomerdob"
+                    value="{{customer.customerAge}}"  placeholder="age" >
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div class="col-md-6">
+                    <label for="inputGender">Gender</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="radio" name="customerGender"  value="{{customer.customerGender}}" >
+                    Male &nbsp;
+                    <input type="radio" name="customerGender" value="{{customer.customerGender}}"> 
+                    Female &nbsp;
+                    <input type="radio" name="customerGender" value="{{customer.customerGender}}">
+                    Other
+                </div>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <div>
+                    <label for="inputcustomermobilenumber">Phone Number 1</label>
+                    <input type="number" class="form-control" name="customermobilenumber"
+                        id="inputcustomermobilenumber" placeholder="Phone Number"
+                        value="{{customer.customerMobileNumber}}">
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div>
+                    <label for="inputcustomermobilenumber">Phone Number 2</label>
+                    <input type="number" class="form-control" name="customermobilenumber"
+                        id="inputcustomermobilenumber" placeholder="Phone Number"
+                        value="{{customer.customerMobileNumber2}}" >
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputcustomeremail">Email Id</label>
+                <input type="email" class="form-control" name="customeremail" id="inputcustomeremail"
+                value="{{customer.customerEmail}}" placeholder="Email Id" >
+            </div>
+
+        </div>
+
+
+
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label style="text-align: center;">Address Details</label>
+                <div>
+                    <label for="houseNumber">House Number</label>
+                    <input type="number" class="form-control" name="houseNumber"
+                        id="houseNumber" placeholder="House number"
+                        value="{{customer.customerAddress.houseNumber}}" >
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div>
+                    <label for="streetName">Street Name</label>
+                    <input type="text" class="form-control" name="streetName"
+                        id="streetName" placeholder="Street Name"
+                        value="{{customer.customerAddress.streetName}}">
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div>
+                    <label for="areaName">Area Name</label>
+                    <input type="text" class="form-control" name="areaName"
+                        id="areaName" placeholder="Area Name"
+                        value="{{customer.customerAddress.areaName}}">
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div>
+                    <label for="cityName">City Name</label>
+                    <input type="text" class="form-control" name="cityName"
+                        id="cityName" placeholder="City Name"
+                        value="{{customer.customerAddress.cityName}}" >
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div>
+                    <label for="district">District</label>
+                    <input type="text" class="form-control" name="district"
+                        id="district" placeholder="District"
+                        value="{{customer.customerAddress.district}}" >
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div>
+                    <label for="state">state</label>
+                    <input type="text" class="form-control" name="state"
+                        id="state" placeholder="state"
+                        value="{{customer.customerAddress.state}}" >
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div>
+                    <label for="pincode">Pincode</label>
+                    <input type="number" class="form-control" name="pincode"
+                        id="pincode" placeholder="Pincode"
+                        value="{{customer.customerAddress.pincode}}" >
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+        <div class="form-group col-md-6">
+            <div>
+                <label for="customerAmountPaidForHome">Amount Paid for Home</label>
+                <input type="number" class="form-control" name="customerAmountPaidForHome"
+                    id="customerAmountPaidForHome" placeholder="customerAmountPaidForHome"
+                    value="{{customer.customerAmountPaidForHome}}">
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <div>
+                <label for="customerTotalLoanRequired">Total Loan Required</label>
+                <input type="number" class="form-control" name="customerTotalLoanRequired"
+                    id="customerTotalLoanRequired" placeholder="customerTotalLoanRequired"
+                    value="{{customer.customerTotalLoanRequired}}" >
+            </div>
+        </div>
+    </div>
+
+        
+    </div>
+
+
+
+
+    
+    <div *ngIf="step==2">
+        <div>
+            <!-- <div>
+                Please note down your customer ID for future use: {{generatedCustomerId}} <br>
+                
+                
+            </div> -->
+            
+            <h6 class="text-center">Educational, Family, Professional Information</h6><br>
+            <div class="form-row">
+                
+                <div class="form-group" >
+                    <h6 class="text-center">Educational Information</h6>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="eduInfo">Education Type</label>
+                            <input type="text" class="form-control" name="educationType" id="eduInfo"
+                            value="{{customer.educationalInfo.educationType}}"  placeholder="Educational Info" >
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                
+                <div class="form-group" >
+                    <h6 class="text-center">Family Information</h6><br>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="fatherName">Father Name</label>
+                            <input type="text" class="form-control" name="fatherName" id="fatherName"
+                            value="{{customer.familyInfo.fatherName}}"  placeholder="Father name" >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="motherName">Mother Name</label>
+                            <input type="text" class="form-control" name="motherName" id="motherName"
+                            value="{{customer.familyInfo.motherName}}" placeholder="mother name" >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="spouseName">spouse Name</label>
+                            <input type="text" class="form-control" name="spouseName" id="spouseName"
+                            value="{{customer.familyInfo.spouseName}}"   placeholder="spouse name" >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="noOfFamilyMembers">numberOfFamilyMembers</label>
+                            <input type="number" class="form-control" name="noOfFamilyMembers" id="noOfFamilyMembers"
+                            value="{{customer.familyInfo.noOfFamilyMembers}}"  placeholder="noOfFamilyMembers" >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="noOfChildren">numberOfChildren</label>
+                            <input type="number" class="form-control" name="noOfChildren" id="noOfChildren"
+                            value="{{customer.familyInfo.noOfChildren}}" placeholder="noOfChildren" >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="maritalStatus">maritalStatus</label>
+                            <input type="text" class="form-control" name="maritalStatus" id="maritalStatus"
+                            value="{{customer.familyInfo.maritalStatus}}" placeholder="maritalStatus" >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="familyIncome">Family Income</label>
+                            <input type="number" class="form-control" name="familyIncome" id="familyIncome"
+                            value="{{customer.familyInfo.familyIncome}}"  placeholder="familyIncome" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                
+                <div class="form-group" >
+                    <h6 class="text-center">Profession</h6><br>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="profInfo">Profession Type</label>
+                            <input type="text" class="form-control" name="professionType" id="profInfo"
+                            value="{{customer.profession.professionType}}"  placeholder="Profession Type" >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="profSalary">Salary</label>
+                            <input type="number" class="form-control" name="professionSalary" id="profSalary"
+                            value="{{customer.profession.professionSalary}}"  placeholder="Profession Salary">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="profDesignation">Designation</label>
+                            <input type="text" class="form-control" name="professionDesignation" id="profDesignation"
+                            value="{{customer.profession.professionDesignation}}"  placeholder="Profession Designation" >
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            
+
+        </div>
+     </div> 
+
+
+
+
+
+
+    <div *ngIf="step==3">
+        <h6 class="text-center">Step 3 data</h6><br>
+        <div class="form-row" >
+            <h6 class="text-center"> Cibil Details</h6><br>
+           
+            <div class="form-group col-md-6">
+                <label for="cibilScore">Cibil Score</label>
+                <input type="number" class="form-control" name="cibilScore" id="cibilScore"
+                value="{{customer.cibilDetails.cibilScore}}"  placeholder="cibilScore" >
+            </div>
+            <div class="form-group col-md-6">
+                <label for="cibilScoreDateTime">cibilScoreDateTime</label>
+                <input type="text" class="form-control" name="cibilScoreDateTime" id="cibilScoreDateTime"
+                value="{{customer.cibilDetails.cibilScoreDateTime}}" placeholder="cibilScoreDateTime">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="status">Cibil status</label>
+                <input type="text" class="form-control" name="status" id="status"
+                value="{{customer.cibilDetails.status}}" placeholder="status" >
+            </div>
+            <div class="form-group col-md-6">
+                <label for="remarksByOe">Remarks By Opertional Executive</label>
+                <input type="text" class="form-control" name="remarksByOe" id="remarksByOe"
+                value="{{customer.cibilDetails.remarksByOe}}"  placeholder="remarksByOe" >
+            </div>
+        </div>
+
+
+        <div class="form-row" >
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="accountType">Account Type</label>
+                    <input type="text" class="form-control" name="accountType" id="accountType"
+                    value="{{customer.accountDetails.accountType}}"  placeholder="accountType">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="accountBalance">Account Balance</label>
+                    <input type="number" class="form-control" name="accountBalance" id="accountBalance"
+                    value="{{customer.accountDetails.accountBalance}}"   placeholder="accountBalance" >
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="accountHolderName">accountHolderName</label>
+                    <input type="text" class="form-control" name="accountHolderName" id="accountHolderName"
+                    value="{{customer.accountDetails.accountHolderName}}" placeholder="accountHolderName" >
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="accountStatus">Account Status</label>
+                    <input type="text" class="form-control" name="accountStatus" id="accountStatus"
+                    value="{{customer.accountDetails.accountStatus}}"  placeholder="accountStatus" >
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="accountNumber">Account Number</label>
+                    <input type="number" class="form-control" name="accountNumber" id="accountNumber"
+                    value="{{customer.accountDetails.accountNumber}}"   placeholder="accountNumber"  >
+                </div>
+            </div>
+            
+        </div>
+
+
+
+
+
+
+        <div class="form-row" >
+            <h6 class="text-center"> Property Information</h6><br><br>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="propertyType">propertyType</label>
+                    <input type="text" class="form-control" name="propertyType" id="propertyType"
+                    value="{{customer.propertyInfo.propertyType}}"    placeholder="propertyType" >
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="propertyArea">propertyArea</label>
+                    <input type="text" class="form-control" name="propertyArea" id="propertyArea"
+                    value="{{customer.propertyInfo.propertyArea}}"   placeholder="propertyArea" >
+                </div>
+                
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="constructionArea">Construction Area</label>
+                    <input type="text" class="form-control" name="constructionArea" id="constructionArea"
+                    value="{{customer.propertyInfo.constructionArea}}" placeholder="constructionArea" >
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="propertyPrice">property Price</label>
+                    <input type="number" class="form-control" name="propertyPrice" id="propertyPrice"
+                        placeholder="propertyPrice" formControlName="propertyPrice">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="constructionPrice">constructionPrice</label>
+                    <input type="number" class="form-control" name="constructionPrice" id="constructionPrice"
+                    value="{{customer.propertyInfo.constructionPrice}}"  placeholder="constructionPrice"  >
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label>Property Document</label> &nbsp;
+                    <img [src]="'data:image/jpeg;base64,'+customer.propertyInfo.uploadedpropertyDocuments" height="150">
+                   
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Price Proof</label> &nbsp;
+                    <img [src]="'data:image/jpeg;base64,'+customer.propertyInfo.uploadedpriceProofs" height="150">
+                    
+                </div>
+            </div>
+
+            <div class="form-row" >
+                <label style="text-align: center;">Property Address Details</label>
+                
+                <div class="form-group col-md-6">
+                    <div>
+                        <label for="streetName">Street Name</label>
+                        <input type="text" class="form-control" name="streetName"
+                            id="streetName" placeholder="Street Name"
+                            value="{{customer.propertyAddress.streetName}}"   >
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <div>
+                        <label for="areaName">Area Name</label>
+                        <input type="text" class="form-control" name="areaName"
+                            id="areaName" placeholder="Area Name"
+                            value="{{customer.propertyAddress.areaName}}"  >
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <div>
+                        <label for="cityName">City Name</label>
+                        <input type="text" class="form-control" name="cityName"
+                            id="cityName" placeholder="City Name"
+                            value="{{customer.propertyAddress.cityName}}"  >
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <div>
+                        <label for="district">District</label>
+                        <input type="text" class="form-control" name="district"
+                            id="district" placeholder="District"
+                            value="{{customer.propertyAddress.district}}"  >
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <div>
+                        <label for="state">state</label>
+                        <input type="text" class="form-control" name="state"
+                            id="state" placeholder="state"
+                            value="{{customer.propertyAddress.state}}" >
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <div>
+                        <label for="pincode">Pincode</label>
+                        <input type="number" class="form-control" name="pincode"
+                            id="pincode" placeholder="Pincode"
+                            value="{{customer.propertyAddress.pincode}}" >
+                    </div>
+                </div>   
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="form-row" >
+            <label style="text-align: center;">Gurantor Details</label>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="gurantorName">GurantorName</label>
+                    <input type="text" class="form-control" name="gurantorName" id="gurantorName"
+                    value="{{customer.gurantorDetails.gurantorName}}" placeholder="gurantorName" >
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="gurantorDateOfBirth">Gurantor DOB</label>
+                    <input type="text" class="form-control" name="gurantorDateOfBirth" id="gurantorDateOfBirth"
+                    value="{{customer.gurantorDetails.gurantorDateOfBirth}}"  placeholder="gurantorDateOfBirth" >
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="gurantorRelationship">Gurantor Relation</label>
+                    <input type="text" class="form-control" name="gurantorRelationship" id="gurantorRelationship"
+                    value="{{customer.gurantorDetails.gurantorRelationship}}"  placeholder="gurantorRelationship" >
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="gurantorMobileNumber">gurantorMobileNumber</label>
+                    <input type="number" class="form-control" name="gurantorMobileNumber" id="gurantorMobileNumber"
+                        placeholder="gurantorMobileNumber" value="{{customer.gurantorDetails.gurantorMobileNumber}}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="gurantorAadharCardNo">gurantorAadharCardNo</label>
+                    <input type="number" class="form-control" name="gurantorAadharCardNo" id="gurantorAadharCardNo"
+                        placeholder="gurantorAadharCardNo"  value="{{customer.gurantorDetails.gurantorMobileNumber}}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="gurantorAddress">gurantorAddress</label>
+                    <input type="text" class="form-control" name="gurantorAddress" id="gurantorAddress"
+                        placeholder="gurantorAddress"  
+                        value="{{customer.gurantorDetails.gurantorAddress}}">
+                </div>
+            </div>
+            
+        </div>
+
+
+    </div>
+

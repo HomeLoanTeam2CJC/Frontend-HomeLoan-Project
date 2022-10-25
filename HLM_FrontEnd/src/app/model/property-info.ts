@@ -9,4 +9,6 @@ export class PropertyInfo {
     propertyPrice: number;
     constructionPrice: number;
     propertyAddress: PropertyAddress;
+    uploadedpropertyDocuments:any[];
+    uploadedpriceProofs:any[];
 }

@@ -9,11 +9,133 @@
 
 
      <!-- for pdf generation and downloading -->
-                <div >
-                    <button class="btn btn-info">Download Pdf</button>
-
+                
+                  <div class="shadow p-3 mb-5 bg-body rounded">
+                    <div class="container" id="SanctionLetterPDF">
+                        <h1 align="center" style="color: Red;"><b>Sanction Letter</b></h1>
+                        <div class="appointment-letter">
+                            <p style="text-align: center;font-size:20px">PRIVATE AND CONFIDENTIAL
+                            </p>
+                            <p> Customer Id : {{existingCustomerId}} <br />
+                                Sanction Letter Id : {{customer.sanctionLetter.sanctionId}} <br />
+                            </p>
+                            <p>Mr. ƒ Ms. {{customer.sanctionLetter.applicantName}} <br />
+                                {{customer.customerAddress.areaName}}, {{customer.customerAddress.district}}<br />
+                                {{customer.customerAddress.state}},<br />
+                              PINCODE:{{customer.customerAddress.pincode}}
+                            </p>
+                            <p>
+                                Dear Applicant {{customer.sanctionLetter.applicantName}},
+                            </p>
+                  
+                            <p> Based on the application and information
+                                provided there, we are blessed to extend an offer to you for a loan as per the
+                                preliminary terms and condition mentioned below. </p>
+                            <table border=1 cellspacing=0 align="center">
+                                <tr>
+                                    <td colspan="3" style="text-align:center">ANNEXURE I</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" style="text-align:center">Home Loan Company</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:40%">Customer Id </td>
+                                    <td colspan="2"> {{existingCustomerId}} </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:40%">Name </td>
+                                    <td colspan="2">{{customer.sanctionLetter.applicantName}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:40%">Address </td>
+                                    <td colspan="2">  {{customer.customerAddress.areaName}},&nbsp;
+                                      {{customer.customerAddress.district}},&nbsp;{{customer.customerAddress.state}},&nbsp;
+                                        {{customer.customerAddress.pincode}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:40%">Email Address </td>
+                                    <td colspan="2">{{customer.customerEmail}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" style="text-align:center">Loan Details </td>
+                
+                                </tr>
+                                <tr>
+                                    <td style="width:40%">Loan No </td>
+                                    <td colspan="2">{{customer.sanctionLetter.sanctionId}}</td>
+                                </tr>
+                      
+                                <tr>
+                                    <td style="width:40%">Max.EMI</td>
+                                    <td colspan="2"> {{customer.sanctionLetter.maxEmi}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:40%">Max. Sanction Amount</td>
+                                    <td colspan="2"> {{customer.sanctionLetter.maxSanctionAmount}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:40%">Tenure</td>
+                                    <td colspan="2">{{customer.sanctionLetter.averageTenure}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:40%">Sactioned Date</td>
+                                    <td colspan="2">{{customer.sanctionLetter.sanctionDate}}</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td colspan="3" style="width:40%">Remarks: If you have any query related to Offer Letter please do
+                                        contact to
+                                        our customer executive
+                                    </td>
+                                </tr>
+                                <th colspan="3" style="text-align:center" class="container">
+                
+                                    <div class="about-section" align="left">
+                                        <h6>Addition conditions to comply prior to loan disbursal:</h6>
+                                        <p>1. Repayment from Home Loan Company </p>
+                                        <p>2. Legal vetting and search to be conducted </p>
+                                        <p>3. NOC and offered collateral </p>
+                                        <p>4. Confirmation form,official ID and Copy of ID </p>
+                                    </div>
+                                </th>
+                            </table><br>
+                            <p>Declarations: This offer letter is made on the basis of information provided by you. Should it prove
+                                untrue or incorrect at any time, the Company reserves the rights to take appropriate action including
+                                forthwith termination of service. We shall be entitled to initiate necessary enquiries with the source
+                                of reference provided by you. In case of unfavorable report, we shall be entitled to take appropriate
+                                steps including forthwith terminating this agreement</p>
+                            <p>Wish you a successful professional stint with us. We look forward to a mutually beneficial and enriching
+                                experience having you on board. All the best!</p>
+                            <p>Warm Regards,<br />
+                                Home Loan Company
+                            </p>
+                            <p>Credit Manager<br />
+                
+                            </p>
+                            <div align="right">
+                                <p class="text-right">I have read the above terms and conditions of my Offer Letter. I accept
+                                    the same.<br />
+                                    _____________________ <br />
+                    {{customer.sanctionLetter.applicantName}}
+                                  <br />
+                                    Customer Id: {{existingCustomerId}}
+                                </p>
+                            </div>
+                
+                
+                        </div>
+                    </div>
+                </div>
+                          
+                        <div>
+                          <button class="btn btn-primary" type="submit" (click)="generatePDF()">Generate PDF</button>
+                      </div>
+                      
+                      
+                  
+                  
     <!-- Email sending form -->
-                </div >
+                
                 <form [formGroup]="emailForm" (ngSubmit)="sendEmail()">
                     <div class="form-group col-md-6">
                         <label for="subject">Subject</label>
@@ -35,6 +157,7 @@
 
 
                 </form>
-
+            </div >
     </div>
-</div>
+
+<router-outlet></router-outlet>
