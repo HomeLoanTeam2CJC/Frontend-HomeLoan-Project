@@ -10,8 +10,9 @@
                 <th>Name</th>
                 <th>View Details</th>
                 <th>Deligence Report</th> 
-                <th>Sanction Letter</th>  <!-- status  -->
-                <th>Branch Manager Response</th> <!-- status  -->
+                  <!-- status  -->
+                <th>Branch Manager Response</th>
+                <th>Sanction Letter</th> <!-- status  -->
                 <th>Customer Acceptance</th> <!-- status  -->
                 <th>Loan Agreement</th>
                 <th>Final Approval</th>
@@ -31,15 +32,7 @@
                         <button type="button" class="btn btn-warning" *ngIf="s.deligenceReportStatus==null">Pending
                         </button>  
                 </td>
-                <td>
-                    <div *ngIf="s.deligenceReportStatus">
-                        <button type="button" class="btn btn-success" *ngIf="s.sanctionLetterStatus"
-                        [routerLink]="['email-sanction', s.customerId]" >{{s.sanctionLetterStatus}}
-                        </button>
-                        <button type="button" class="btn btn-warning" *ngIf="s.sanctionLetterStatus==null">Pending
-                        </button>
-                    </div>
-                  </td>
+               
                 <td>
                     <div *ngIf="s.sanctionLetterStatus">
                         <button type="button" class="btn btn-success" *ngIf="s.doReportBmResponseStatus">{{s.doReportBmResponseStatus}}
@@ -48,6 +41,15 @@
                         </button> 
                     </div>
                 </td>
+                <td>
+                    <div *ngIf="s.doReportBmResponseStatus">
+                        <button type="button" class="btn btn-success" *ngIf="s.sanctionLetterStatus"
+                        [routerLink]="['email-sanction', s.customerId]" >{{s.sanctionLetterStatus}}
+                        </button>
+                        <button type="button" class="btn btn-warning" *ngIf="s.sanctionLetterStatus==null">Pending
+                        </button>
+                    </div>
+                  </td>
                 <td>
                     <div *ngIf="s.doReportBmResponseStatus">
                         <button type="button" class="btn btn-success" *ngIf="s.customerAcceptanceStatus!=null">

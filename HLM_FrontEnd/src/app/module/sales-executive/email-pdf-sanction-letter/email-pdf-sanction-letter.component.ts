@@ -71,6 +71,7 @@ export class EmailPdfSanctionLetterComponent implements OnInit {
 
   sendEmail(){
 
+   
     const emailJson = JSON.stringify(this.emailForm.value)
 
     const emailFormData = new FormData

@@ -17,7 +17,7 @@
         <th scope="row">{{c.customerId}}</th>
         <td>{{c.customerName}}</td>
         <td>
-          <button class="btn btn-primary">Details</button>
+          <button class="btn btn-primary" [routerLink]="['view-details', c.customerId]" [state]="c">Details</button>
         </td>
         <td>
           <div>

@@ -39,12 +39,13 @@ const deligencerouting: Routes = [
       },
       {
         path: 'loanagreementform/:customerId', component: LoanagreementformComponent
+      },
+      {
+        path: 'view-details/:customerId' , component: ViewDetailsComponent
       }
     ]
-  },
-  // {
-  //   path: 'view-details/:customerId' , component: ViewDetailsComponent
-  // }
+  }
+ 
   
 
 ]

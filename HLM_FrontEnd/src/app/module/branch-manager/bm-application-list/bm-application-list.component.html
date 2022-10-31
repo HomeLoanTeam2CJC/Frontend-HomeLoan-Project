@@ -7,6 +7,7 @@
         <th scope="col">Deligence Status</th>
         <th scope="col">Sanction Letter</th>
         <th scope="col">BM status</th>
+        <th scope="col">Customer Acceptance</th>
         <th scope="col">Loan Agreement</th>
         <th>BM Final Approval</th>
       </tr>
@@ -36,9 +37,18 @@
               [routerLink]="['bm-application-update', c.customerId]" [state]="c">Pending</button>
           </div>  
         </td>
+        <td>
+            <div *ngIf="c.doReportBmResponseStatus">
+              <button type="button" class="btn btn-success" *ngIf="c.customerAcceptanceStatus!=null">
+                  {{c.customerAcceptanceStatus}}
+              </button>
+              <button type="button" class="btn btn-warning" *ngIf="c.customerAcceptanceStatus==null">Pending
+              </button>
+          </div>
+        </td>
 
         <td>
-          <div *ngIf="c.doReportBmResponseStatus">
+          <div *ngIf="c.customerAcceptanceStatus">
             <button type="button" class="btn btn-success" *ngIf="c.loanAgreementStatus" [routerLink]="['view-loan-agreement', c.customerId]" [state]="c" >{{c.loanAgreementStatus}}</button>
             <button type="button" class="btn btn-warning" *ngIf="c.loanAgreementStatus==null">Pending
             </button>

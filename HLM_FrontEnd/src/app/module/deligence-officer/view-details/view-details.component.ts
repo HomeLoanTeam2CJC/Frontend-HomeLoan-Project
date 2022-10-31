@@ -12,8 +12,10 @@ import { CustomerApplicationService } from 'app/services/customer-application.se
 })
 export class ViewDetailsComponent implements OnInit {
 
-  constructor(private fb:FormBuilder,private routes: ActivatedRoute, private service: CustomerApplicationService,private locations:Location) { }
+  constructor(private fb:FormBuilder,private routes: ActivatedRoute, private service: CustomerApplicationService,private location:Location) { }
 
+  customer: Customer
+  step: number = 1
   existingCustomerId :any
   ngOnInit(): void {
     this.getCustomerState()
@@ -25,7 +27,20 @@ export class ViewDetailsComponent implements OnInit {
       let customerId=parseInt(cId);
       console.log('customerID: '+customerId)
       this.existingCustomerId = customerId
+
+
+      let getCust:any = this.location.getState()
+      this.customer = getCust
       
     })
+  }
+
+  nextStep(){
+
+    this.step = this.step+1
+    
+  }
+  prevStep(){
+    this.step = this.step-1
   }
 }

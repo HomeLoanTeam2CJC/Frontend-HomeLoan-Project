@@ -94,7 +94,7 @@ export class CustomerApplicationService {
   }
 
   sendEmail(emailFormData: any, existingCustomerId: any){
-
+    alert("email sent")
     return this.http.post(this.backendCustomerUrl+"customerEmail/"+existingCustomerId, emailFormData)
   }
 

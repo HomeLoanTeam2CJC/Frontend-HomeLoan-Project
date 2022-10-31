@@ -23,21 +23,21 @@ export const ROUTES: RouteInfo[] = [
 
 
     //Deligence Officer Module
-    { path: '/financial-check',     title: 'Financial check',         icon:'nc-bank',       class: '' },
-    { path: '/field-investigation',     title: 'Field Investigation',         icon:'nc-bank',       class: '' },
-    { path: '/technical-check',     title: 'Technical check',         icon:'nc-bank',       class: '' },
-    { path: '/legal-check',     title: 'Legal check',         icon:'nc-bank',       class: '' },
+    { path: '/financial-check',     title: 'Diligence Officer : Financial check',         icon:'nc-bank',       class: '' },
+    { path: '/field-investigation',     title: 'Diligence Officer : Field Investigation',         icon:'nc-bank',       class: '' },
+    { path: '/technical-check',     title: 'Diligence Officer : Technical check',         icon:'nc-bank',       class: '' },
+    { path: '/legal-check',     title: 'Diligence Officer : Legal check',         icon:'nc-bank',       class: '' },
     {
-        path: '/do-application-list',     title: 'Application List  For Deligence Officer',         icon:'nc-bank',       class: ''
+        path: '/do-application-list',     title: 'Diligence Officer : Application List',         icon:'nc-bank',       class: ''
     },
     {
-        path: '/do-application-update',     title: 'Application Update  For Deligence Officer',         icon:'nc-bank',       class: ''
+        path: '/do-application-update',     title: 'Diligence Officer : Application Update',         icon:'nc-bank',       class: ''
     },
     {
-      path: '/sanction-letter-form',     title: 'Sanction Letter form  For Deligence Officer',         icon:'nc-bank',       class: ''
+      path: '/sanction-letter-form',     title: 'Diligence Officer : Sanction Letter form',         icon:'nc-bank',       class: ''
     },
     {
-      path: '/loanagreementform',     title: 'Loan Agreement Form  For Deligence Officer',         icon:'nc-bank',       class: ''
+      path: '/loanagreementform',     title: 'Diligence Officer : Loan Agreement Form',         icon:'nc-bank',       class: ''
     },
     // {
     //   path: '/view-details',        title: 'View Details For Deligence Officer',  icon:'nc-bank',       class: ''
@@ -46,42 +46,42 @@ export const ROUTES: RouteInfo[] = [
 
     //Operational Executive module
     {
-        path: '/credit-score',     title: 'Credit Score',         icon:'nc-bank',       class: ''
+        path: '/credit-score',     title: 'Operational Executive: Credit Score',         icon:'nc-bank',       class: ''
     },
     {
-      path: '/oe-enquiry-list',     title: 'Enquiry List for Operational executive',         icon:'nc-bank',       class: ''
+      path: '/oe-enquiry-list',     title: 'Operational Executive: Enquiry List',         icon:'nc-bank',       class: ''
     },
 
     //Branch Manager Module
     {
-        path: '/bm-application-list',     title: 'Application List For Branch Manager',         icon:'nc-bank',       class: ''
+        path: '/bm-application-list',     title: 'Branch Manager: Application List',         icon:'nc-bank',       class: ''
     },
     {
-        path: '/bm-application-update',     title: 'Application Update For Branch Manager',         icon:'nc-bank',       class: ''
+        path: '/bm-application-update',     title: 'Branch Manager : Application Update',         icon:'nc-bank',       class: ''
     },
     {
-      path: '/view-sanction-letter' , title: "View Sanction Letter  For Branch Manager", icon: "pe-7s-graph", class: ""
+      path: '/view-sanction-letter' , title: "Branch Manager : View Sanction Letter", icon: "pe-7s-graph", class: ""
     },
     {
-      path: '/view-loan-agreement' , title: "view Loan Agreement  For Branch Manager", icon: "pe-7s-graph", class: ""
+      path: '/view-loan-agreement' , title: "Branch Manager : View Loan Agreement", icon: "pe-7s-graph", class: ""
     },
     
 
     //Accounts Manager Module
     {
-        path: '/am-application-list', title: "Application List For Accounts Manager", icon: "pe-7s-graph", class: ""
+        path: '/am-application-list', title: "Accounts Manager : Application List", icon: "pe-7s-graph", class: ""
       },
       {
-        path: '/disbursement-form', title: "Disbursement Form", icon: "pe-7s-graph", class: ""
+        path: '/disbursement-form', title: "Accounts Manager : Disbursement Form", icon: "pe-7s-graph", class: ""
       },
       {
-        path: '/ledger-total-list', title: "Ledger Total List", icon: "pe-7s-graph", class: ""
+        path: '/ledger-total-list', title: "Accounts Manager : Ledger Total List", icon: "pe-7s-graph", class: ""
       },
       {
-        path: '/ledger-defaulter-list', title: "Ledger Defaulter List", icon: "pe-7s-graph", class: ""
+        path: '/ledger-defaulter-list', title: "Accounts Manager : Ledger Defaulter List", icon: "pe-7s-graph", class: ""
       },
       {
-        path: '/ledger-form', title: "Ledger Form", icon: "pe-7s-graph", class: ""
+        path: '/ledger-form', title: "Accounts Manager : Ledger Form", icon: "pe-7s-graph", class: ""
       },
 
     //Telecom Module
